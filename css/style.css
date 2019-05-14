@@ -1,0 +1,139 @@
+/********************************************************
+VARIABLES
+********************************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/********************************************************
+HERO SECTION
+********************************************************/
+.hero-section {
+  background-color: #0C0F20;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "logo logo logo logo . . header header header header . ." ". . . . . . paragraph paragraph button button . .";
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section__header {
+  color: #E8E4E4;
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.hero-section__paragraph {
+  color: #E8E4E4;
+  -ms-grid-row: 2;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 2;
+  grid-area: paragraph;
+}
+
+.hero-section__logo {
+  color: #E8E4E4;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: logo;
+  font-size: 35rem;
+}
+
+.hero-section__button {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: transparent;
+  border: 2px solid #E8E4E4;
+  border-radius: 28px;
+  color: #E8E4E4;
+  font-size: 1.6rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-area: button;
+  padding: 0.65rem 4rem;
+  position: relative;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.hero-section__button:hover {
+  background-color: #738cf1;
+  border: 2px solid #738cf1;
+  color: #0C0F20;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.hero-section__button:focus {
+  outline: none;
+}
+
+.hero-section__button:active {
+  border-radius: 22px;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+/********************************************************
+NAVBAR SECTION
+********************************************************/
+.navbar {
+  overflow: hidden;
+  height: 100vh;
+  width: 10%;
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  background-color: red;
+}
+
+/********************************************************
+SKILLS SECTION
+********************************************************/
+.skills {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(600px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  padding: 10rem 5rem;
+}
+
+.skills__i-can-do-section {
+  max-width: 30%;
+  grid-auto-flow: row;
+}
+
+.skills__i-love-section {
+  grid-auto-flow: row;
+  max-width: 30%;
+}
+/*# sourceMappingURL=style.css.map */

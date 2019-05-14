@@ -1,0 +1,137 @@
+/********************************************************
+VARIABLES
+********************************************************/
+$mainDarkCollor: #0C0F20;
+$mainLightCollor:#E8E4E4;
+$secondaryLightCollor: rgb(115, 140, 241);
+$secondaryLightCollorOPA60: rgba(115, 140, 241, 0.6);
+$fontTypeMainRoboto: 'Roboto Condensed', sans-serif;
+$fontTypeMontserrat: 'Montserrat', sans-serif;
+$fontTypeRaleway: 'Raleway', sans-serif;
+$fontTypeOpenSans: 'Open Sans', sans-serif;
+$taskFontSize: 20px;
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: $fontTypeMontserrat;
+
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px; 
+}
+
+
+
+/********************************************************
+HERO SECTION
+********************************************************/
+
+.hero-section{
+    background-color: $mainDarkCollor;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas: 
+    "logo logo logo logo . . header header header header . ."
+    ". . . . . . paragraph paragraph button button . ."
+    ;
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    &__header{
+        color: $mainLightCollor;
+        grid-area: header;
+        align-self: end;
+    }
+
+    &__paragraph{
+        color: $mainLightCollor;
+        grid-area: paragraph;
+    }
+
+    &__logo{
+        color: $mainLightCollor;
+       grid-area: logo;
+        font-size: 35rem;
+    }
+
+    &__button{
+        align-self: start;
+        justify-self: center;
+        background-color: transparent;
+        border: 2px solid $mainLightCollor;
+        border-radius: 28px;
+        color: $mainLightCollor;
+        font-size: 1.6rem;
+        grid-area: button;
+        padding: 0.65rem 4rem;
+        position: relative;
+        transition: all 0.15s;
+      
+    }
+    &__button:hover{
+        background-color: $secondaryLightCollor;
+        border: 2px solid $secondaryLightCollor;
+        color: $mainDarkCollor;
+        transition: all 0.15s;
+    }
+    &__button:focus{
+        outline: none;
+    }
+    &__button:active{
+        border-radius: 22px;
+        transition: all 0.25s;
+    }
+}
+
+
+/********************************************************
+NAVBAR SECTION
+********************************************************/
+
+.navbar{
+    overflow: hidden;
+    height: 100vh;
+    width:10%;
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    background-color: red;
+
+}
+
+
+
+
+/********************************************************
+SKILLS SECTION
+********************************************************/
+
+.skills{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(600px, 1fr) );
+    grid-template-rows: auto;
+    padding: 10rem 5rem;
+
+    &__i-can-do-section{
+        max-width: 30%;
+        grid-auto-flow: row;
+    }
+
+    &__i-love-section{
+        grid-auto-flow: row;
+        max-width: 30%;
+    }
+}
