@@ -2,15 +2,15 @@
 VARIABLES
 ********************************************************/
 $mainDarkCollor: #0C0F20;
-$mainLightCollor:#E8E4E4;
-$secondaryLightCollor: rgb(115, 140, 241);
-$secondaryLightCollorOPA60: rgba(115, 140, 241, 0.6);
+$mainLightCollor:rgb(255, 255, 255);
+$secondaryLightCollor: rgb(177, 188, 230);
+$secondaryLightCollorOPA50: rgba(177, 188, 230, 0.5);
 $fontTypeMainRoboto: 'Roboto Condensed', sans-serif;
 $fontTypeMontserrat: 'Montserrat', sans-serif;
 $fontTypeRaleway: 'Raleway', sans-serif;
 $fontTypeOpenSans: 'Open Sans', sans-serif;
 $taskFontSize: 20px;
-
+$imageTodoList: "../images/todolist.jpg";
 
 
 body{
@@ -28,6 +28,18 @@ html {
     width: 0px; 
 }
 
+.main--hide{
+    display:none;
+}
+
+.hero-section--hide{
+   display:none !important;
+                                                //TODO: Udělat animaci 
+  
+}
+.navbar--hide{
+    display: none;
+}
 
 
 /********************************************************
@@ -63,7 +75,7 @@ HERO SECTION
     &__logo{
         color: $mainLightCollor;
        grid-area: logo;
-        font-size: 35rem;
+        font-size: 29vw;
     }
 
     &__button{
@@ -106,10 +118,24 @@ NAVBAR SECTION
     width:10%;
     position: fixed;
     z-index: 9999;
+    border-left: 2px dotted $mainDarkCollor;
     right: 0;
     top: 0;
     background-color: $mainLightCollor;
+    &__nav__item{
+        color:$mainDarkCollor;
+        text-decoration: none;
+        
+    }
+    &__header{
+        text-align: center;
+    }
 
+}
+
+li{
+    margin: 20px 0px;
+    display: block;
 }
 
 
@@ -138,6 +164,11 @@ SKILLS SECTION
 
 
 
+
+/********************************************************
+ABOUT ME SETION
+********************************************************/
+
 .about-me{
     display: grid;
     grid-template-columns: 3fr 9fr;
@@ -162,7 +193,9 @@ SKILLS SECTION
 
 
 
-
+/********************************************************
+PORTFOLIO SECTION
+********************************************************/
 
 
 .portfolio{
@@ -187,6 +220,47 @@ SKILLS SECTION
 		inset 0 10px rgba(255,255,255,0.2),
 		inset 0 10px 20px rgba(255,255,255,0.25),
 		inset 0 -15px 30px rgba(0,0,0,0.3);
-	    background:rgba(0,0,0,0.25);
+	    background:$secondaryLightCollorOPA50;
+    }
+    &__first-section{
+        background-image: url($imageTodoList);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.item-description{
+    display: grid;
+    grid-template-rows: 2;
+    background-color: $secondaryLightCollorOPA50;
+    margin-left: 12.5%;
+    width: 65%;
+    margin-bottom: 5%;
+    &__header{
+        text-align: center;
+    }
+    &__paragraph{
+        padding: 1.5vw;
+    }
+    &--hide{
+        display: none;
+    }
+
+}
+
+
+
+/********************************************************
+FOOTER SECTION
+********************************************************/
+
+.footer{
+    margin: 0;
+    background-color: $mainDarkCollor;
+    color: $mainLightCollor;
+    z-index: 999999999999999;
+
+    &--hide{
+        display:none;
     }
 }

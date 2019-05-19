@@ -16,6 +16,18 @@ html {
   width: 0px;
 }
 
+.main--hide {
+  display: none;
+}
+
+.hero-section--hide {
+  display: none !important;
+}
+
+.navbar--hide {
+  display: none;
+}
+
 /********************************************************
 HERO SECTION
 ********************************************************/
@@ -34,7 +46,7 @@ HERO SECTION
 }
 
 .hero-section__header {
-  color: #E8E4E4;
+  color: white;
   -ms-grid-row: 1;
   -ms-grid-column: 7;
   -ms-grid-column-span: 4;
@@ -45,7 +57,7 @@ HERO SECTION
 }
 
 .hero-section__paragraph {
-  color: #E8E4E4;
+  color: white;
   -ms-grid-row: 2;
   -ms-grid-column: 7;
   -ms-grid-column-span: 2;
@@ -53,12 +65,12 @@ HERO SECTION
 }
 
 .hero-section__logo {
-  color: #E8E4E4;
+  color: white;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: logo;
-  font-size: 35rem;
+  font-size: 29vw;
 }
 
 .hero-section__button {
@@ -68,9 +80,9 @@ HERO SECTION
   -ms-grid-column-align: center;
       justify-self: center;
   background-color: transparent;
-  border: 2px solid #E8E4E4;
+  border: 2px solid white;
   border-radius: 28px;
-  color: #E8E4E4;
+  color: white;
   font-size: 1.6rem;
   -ms-grid-row: 2;
   -ms-grid-column: 9;
@@ -83,8 +95,8 @@ HERO SECTION
 }
 
 .hero-section__button:hover {
-  background-color: #738cf1;
-  border: 2px solid #738cf1;
+  background-color: #b1bce6;
+  border: 2px solid #b1bce6;
   color: #0C0F20;
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
@@ -109,9 +121,24 @@ NAVBAR SECTION
   width: 10%;
   position: fixed;
   z-index: 9999;
+  border-left: 2px dotted #0C0F20;
   right: 0;
   top: 0;
-  background-color: #E8E4E4;
+  background-color: white;
+}
+
+.navbar__nav__item {
+  color: #0C0F20;
+  text-decoration: none;
+}
+
+.navbar__header {
+  text-align: center;
+}
+
+li {
+  margin: 20px 0px;
+  display: block;
 }
 
 /********************************************************
@@ -137,6 +164,9 @@ SKILLS SECTION
   max-width: 30%;
 }
 
+/********************************************************
+ABOUT ME SETION
+********************************************************/
 .about-me {
   display: -ms-grid;
   display: grid;
@@ -157,7 +187,7 @@ SKILLS SECTION
 }
 
 .about-me__text-section {
-  color: #E8E4E4;
+  color: white;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -165,6 +195,9 @@ SKILLS SECTION
   padding-right: 18%;
 }
 
+/********************************************************
+PORTFOLIO SECTION
+********************************************************/
 .portfolio {
   display: -ms-grid;
   display: grid;
@@ -187,6 +220,49 @@ SKILLS SECTION
   border-radius: 10px 10px 2px 2px;
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(177, 188, 230, 0.5);
+}
+
+.portfolio__first-section {
+  background-image: url("../images/todolist.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.item-description {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2;
+      grid-template-rows: 2;
+  background-color: rgba(177, 188, 230, 0.5);
+  margin-left: 12.5%;
+  width: 65%;
+  margin-bottom: 5%;
+}
+
+.item-description__header {
+  text-align: center;
+}
+
+.item-description__paragraph {
+  padding: 1.5vw;
+}
+
+.item-description--hide {
+  display: none;
+}
+
+/********************************************************
+FOOTER SECTION
+********************************************************/
+.footer {
+  margin: 0;
+  background-color: #0C0F20;
+  color: white;
+  z-index: 999999999999999;
+}
+
+.footer--hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

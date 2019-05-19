@@ -20,31 +20,31 @@
 <body>
 
 
-  <Header class="hero-section">
+  <Header class="hero-section" id="home">
     <div class="hero-section__logo">JJ</div>
     <h1 class="hero-section__header">Hello, I am glad you made it here in time.</h1>
     <p class="hero-section__paragraph">I will be your guide.</p>
 
-    <button class="hero-section__button">Explore</button>
+    <button class="hero-section__button" href="#about-me">Explore</button>
   </Header>
 
-  <aside class="navbar">
-    <header class="navbar__header">JJ</header>
+  <aside class="navbar navbar--hide">
+    <h1 class="navbar__header">JJ</h1>
     <nav class="navbar__nav">
       <ul class="navbar__nav__ul">
-        <li class="navbar__nav__item"><a href="/">Home</a></li>
-        <li class="navbar__nav__item"><a href="/">About Me</a></li>
-        <li class="navbar__nav__item"><a href="/">Portfolio</a></li>
-        <li class="navbar__nav__item"><a href="/">Contact</a></li>
+        <li><a class="navbar__nav__item" href="#home">Home</a></li>
+        <li><a class="navbar__nav__item" href="#about-me">About Me</a></li>
+        <li><a class="navbar__nav__item" href="/">Portfolio</a></li>
+        <li><a class="navbar__nav__item" href="/">Contact</a></li>
       </ul>
     </nav>
   </aside>
 
 
-  <main>
+  <main class="main--hide">
 
 
-    <article class="skills">
+    <article class="skills" id="about-me">
       <section class="skills__i-can-do-section">
         <h1>Things I Can Do</h1>
         <p>HTML5</p>
@@ -93,9 +93,48 @@
       <section class="portfolio__first-second portfolio--glass"></section>
       <section class="portfolio__first-third portfolio--glass"></section>
     </article>
-    <aside>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</aside>
 
+
+    <aside class="item-description">
+      <h1 class="item-description__header">ToDo List:</h1>
+      <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
+        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
+        funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
+        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+      </p>
+    </aside>
+
+    <aside class="item-description item-description--hide">
+      <h1 class="item-description__header">ToDo List</h1>
+      <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
+        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
+        funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
+        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+      </p>
+    </aside>
+
+    <aside class="item-description item-description--hide">
+      <h1 class="item-description__header">ToDo List</h1>
+      <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
+        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
+        funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
+        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+      </p>
+    </aside>
+
+    
   </main>
+
+
+
+  <footer class="footer footer--hide">
+
+    <p class="footer__author">Jiří Jančík</p>
+    <p class="footer__email">Jirijancik2@gmail.com</p> 
+
+  </footer>
+
+<script language="JavaScript" type="text/javascript" src="js/script.js"></script>
 
 </body>
 
