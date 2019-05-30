@@ -10,6 +10,7 @@ $fontTypeMontserrat: 'Montserrat', sans-serif;
 $fontTypeRaleway: 'Raleway', sans-serif;
 $fontTypeOpenSans: 'Open Sans', sans-serif;
 $taskFontSize: 20px;
+$animationTime: 0.45s;
 $imageTodoList: "../images/todolist.jpg";
 
 
@@ -29,18 +30,23 @@ html {
 }
 
 .main--hide{
-    display:none;
+    height: 0px !important;
+    opacity:0 !important;
+    overflow: hidden !important;
 }
 
 .hero-section--hide{
    display:none !important;
-                                                //TODO: Udělat animaci 
-  
 }
 .navbar--hide{
-    display: none;
+    height: 0 !important;
+    opacity:0 !important;
+    overflow: hidden !important;
 }
-
+.main{
+    opacity: 1;
+    transition: opacity $animationTime;
+}
 
 /********************************************************
 HERO SECTION
@@ -53,8 +59,8 @@ HERO SECTION
     grid-template-rows: auto;
 
     grid-template-areas: 
-    "logo logo logo logo . . header header header header . ."
-    ". . . . . . paragraph paragraph button button . ."
+    "logo logo logo logo . . . header header header header ."
+    ". . . . . . . paragraph paragraph button button ."
     ;
 
     height: 100vh;
@@ -89,7 +95,7 @@ HERO SECTION
         grid-area: button;
         padding: 0.65rem 4rem;
         position: relative;
-        transition: all 0.15s;
+        transition: all $animationTime;
       
     }
     &__button:hover{
@@ -122,6 +128,8 @@ NAVBAR SECTION
     right: 0;
     top: 0;
     background-color: $mainLightCollor;
+    opacity: 1;
+    transition: opacity $animationTime;
     &__nav__item{
         color:$mainDarkCollor;
         text-decoration: none;
@@ -251,6 +259,26 @@ PORTFOLIO SECTION
 
 
 /********************************************************
+CONTACT SECTION
+********************************************************/
+.contact{
+    background-color: $mainDarkCollor;
+    color: $mainLightCollor;
+    height: 65vh;
+    &__main-header{
+        padding-top: 3.2vw;
+        padding-left: 3.2vw;
+    }
+    &__main-paragraph{
+        padding-left: 3.2vw;
+    }
+    &__main-paragraph{
+        padding-left: 3.2vw;
+    }
+}
+
+
+/********************************************************
 FOOTER SECTION
 ********************************************************/
 
@@ -260,7 +288,13 @@ FOOTER SECTION
     color: $mainLightCollor;
     z-index: 999999999999999;
 
+    &__author{
+        margin: 0;
+    }
     &--hide{
         display:none;
     }
+
 }
+
+

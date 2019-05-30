@@ -5,30 +5,64 @@ const elementNavbar = document.querySelector(".navbar")!;
 const elementFooter = document.querySelector(".footer")!;
 
 
-elementHeroButton.addEventListener("click", ()=> 'yes');
 
 
-const visibilityChanges = () => {
 
-
-    showMainSection();
-
-    hideHeroSection();
-
-    showNavbar();
-
-    showFooterSection();
-}
 
 
 //need to make a main class - T0
+class mainPage{
 
-//components extending the main class - T1
+    _navBar:navBar;
 
-//specific components on T1 that will contain logic-  T2
+    constructor(navBar:navBar, ){
+    this._navBar = navBar;
+    }
+
+    visibilityChanges = () => {
 
 
-class heroSection {
+        showMainSection();
+    
+        
+    
+        showNavbar();
+    
+        showFooterSection();
+    }
+} 
+
+
+class navBar{
+
+    _homeBtn:Element;
+
+    constructor(homeBtn:Element){
+        this._homeBtn = homeBtn;
+        this.init();
+    }
+
+    private init(){
+
+    }
+
+    private onHomeBtnClick(){
+        this._homeBtn.addEventListener("click", ()=> this.hideHeroSection());
+    }
+
+    private hideHeroSection = () => this._homeBtn.classList.add("hero-section--hide");
+
+}
+
+
+
+
+
+
+
+
+
+class heroSection{
     _elementHeroButton:Element;
     _elementHeroSection:Element;
     
@@ -51,7 +85,11 @@ class heroSection {
 
 
 
-const hideHeroSection = () => elementHeroSection.classList.add("hero-section--hide");
+
 const showMainSection = () => elementMain.classList.remove("main--hide");
 const showNavbar = () => elementNavbar.classList.remove("navbar--hide");
 const showFooterSection = () => elementFooter.classList.remove("footer--hide");
+
+
+
+let HeroSection = new heroSection(elementHeroButton, elementHeroSection);
