@@ -19,38 +19,42 @@ class mainPage{
     this._navBar = navBar;
     }
 
-    visibilityChanges = () => {
-
-
-        showMainSection();
-    
-        
-    
-        showNavbar();
-    
-        showFooterSection();
-    }
 } 
 
 
 class navBar{
 
-    _homeBtn:Element;
+    _homeBtn:Element = document.querySelector(".navbar__nav__item.home-button")!;
+    _elementHeroSection:Element;
+    _elementMain:Element;
+    _elementNavbar:Element;
+    _elementFooter:Element;
 
-    constructor(homeBtn:Element){
-        this._homeBtn = homeBtn;
+
+    constructor(elementHeroSection:Element, elementMain:Element, elementNavbar:Element, elementFooter:Element){
+        this._elementHeroSection = elementHeroSection;
+        this._elementMain = elementMain;
+        this._elementNavbar = elementNavbar;
+        this._elementFooter = elementFooter;
+
+
         this.init();
     }
 
     private init(){
-
+        this.onHomeBtnClick();
     }
 
     private onHomeBtnClick(){
-        this._homeBtn.addEventListener("click", ()=> this.hideHeroSection());
+        this._homeBtn.addEventListener("click", ()=> this.showHeroSection());
     }
 
-    private hideHeroSection = () => this._homeBtn.classList.add("hero-section--hide");
+    private showHeroSection = () => {
+        this._elementHeroSection.classList.remove("hero-section--hide");
+        this._elementMain.classList.add("main--hide");
+        this._elementNavbar.classList.add("navbar--hide");
+        this._elementFooter.classList.add("footer--hide");
+    };
 
 }
 
@@ -65,10 +69,17 @@ class navBar{
 class heroSection{
     _elementHeroButton:Element;
     _elementHeroSection:Element;
+    _elementMain:Element;
+    _elementNavbar:Element;
+    _elementFooter:Element;
     
-    constructor(elementHeroButton:Element, elementHeroSection:Element){
+    
+    constructor(elementHeroButton:Element, elementHeroSection:Element, elementMain:Element, elementNavbar:Element, elementFooter:Element ){
         this._elementHeroButton = elementHeroButton;
         this._elementHeroSection = elementHeroSection;
+        this._elementMain = elementMain;
+        this._elementNavbar = elementNavbar;
+        this._elementFooter = elementFooter;
         this.init();
     };
 
@@ -80,16 +91,16 @@ class heroSection{
         this._elementHeroButton.addEventListener("click", ()=> this.hideHeroSection());
     }
 
-    private hideHeroSection = () => this._elementHeroSection.classList.add("hero-section--hide");
+    private hideHeroSection = () => {
+        this._elementHeroSection.classList.add("hero-section--hide");
+        this._elementMain.classList.remove("main--hide");
+        this._elementNavbar.classList.remove("navbar--hide");
+        this._elementFooter.classList.remove("footer--hide");
+    };
 }
 
 
 
 
-const showMainSection = () => elementMain.classList.remove("main--hide");
-const showNavbar = () => elementNavbar.classList.remove("navbar--hide");
-const showFooterSection = () => elementFooter.classList.remove("footer--hide");
-
-
-
-let HeroSection = new heroSection(elementHeroButton, elementHeroSection);
+let HeroSection = new heroSection(elementHeroButton, elementHeroSection,elementMain,elementNavbar,elementFooter);
+let NavBar = new navBar(elementHeroSection,elementMain,elementNavbar,elementFooter);
