@@ -165,16 +165,100 @@ SKILLS SECTION
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   padding: 3vw 3vw;
+  margin: 8% 0 8% 20%;
 }
 
 .skills__i-can-do-section {
   max-width: 30%;
+  top: -20%;
+  position: relative;
   grid-auto-flow: row;
 }
 
+.skills__header {
+  font-size: 22px;
+  margin: 15% 0 15% 0;
+}
+
+.skills__i-can-do-section p {
+  opacity: 0;
+  position: relative;
+  -webkit-animation-name: slowSlideToLeft;
+          animation-name: slowSlideToLeft;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes slowSlideToLeft {
+  0% {
+    left: -30px;
+    opacity: 0.2;
+  }
+  100% {
+    left: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes slowSlideToLeft {
+  0% {
+    left: -30px;
+    opacity: 0.2;
+  }
+  100% {
+    left: 10px;
+    opacity: 1;
+  }
+}
+
 .skills__i-love-section {
+  position: relative;
+  top: 20%;
   grid-auto-flow: row;
   max-width: 30%;
+}
+
+.skills__i-love-section p {
+  opacity: 0;
+  position: relative;
+  -webkit-animation-name: slowSlideToRight;
+          animation-name: slowSlideToRight;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes slowSlideToRight {
+  0% {
+    right: -45px;
+    opacity: 0;
+  }
+  100% {
+    right: -10px;
+    opacity: 1;
+  }
+}
+
+@keyframes slowSlideToRight {
+  0% {
+    right: -45px;
+    opacity: 0;
+  }
+  100% {
+    right: -10px;
+    opacity: 1;
+  }
 }
 
 /********************************************************
