@@ -302,6 +302,7 @@ PORTFOLIO SECTION
       grid-template-columns: repeat(auto-fit, minmax(300px, 30vw));
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  max-height: 600px;
   height: 80vh;
 }
 
@@ -311,8 +312,10 @@ PORTFOLIO SECTION
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 55%;
-  height: 45%;
+  width: 60%;
+  height: 55%;
+  min-height: 250px;
+  min-width: 250px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px 10px 2px 2px;
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
@@ -323,7 +326,19 @@ PORTFOLIO SECTION
 .portfolio__first-section {
   background-image: url("../images/todolist.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+}
+
+.portfolio__second-section {
+  background-image: url("../images/weatherapp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio__third-section {
+  background-image: url("../images/dianellmorava.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .item-description {

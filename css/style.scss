@@ -12,6 +12,8 @@ $fontTypeOpenSans: 'Open Sans', sans-serif;
 $taskFontSize: 20px;
 $animationTime: 0.45s;
 $imageTodoList: "../images/todolist.jpg";
+$imageWeatherApp: "../images/weatherapp.jpg";
+$imageDianellMorava: "../images/dianellmorava.jpg";
 
 
 body{
@@ -262,12 +264,16 @@ PORTFOLIO SECTION
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(300px, 30vw));
     grid-template-rows: auto;
+    max-height: 600px;
+
     height: 80vh;
     &--glass{
         justify-self: center;
         align-self: center;
-        width: 55%;
-        height: 45%;
+        width: 60%;
+        height: 55%;
+        min-height: 250px;
+        min-width: 250px;
         
 
         border:1px solid rgba(0,0,0,0.5);
@@ -284,7 +290,17 @@ PORTFOLIO SECTION
     &__first-section{
         background-image: url($imageTodoList);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+    }
+    &__second-section{
+        background-image: url($imageWeatherApp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__third-section{
+        background-image: url($imageDianellMorava);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 

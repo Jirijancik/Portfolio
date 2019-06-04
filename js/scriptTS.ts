@@ -10,6 +10,7 @@ const elementFooter = document.querySelector(".footer")!;
 
 
 
+
 //need to make a main class - T0
 class mainPage{
 
@@ -61,8 +62,31 @@ class navBar{
 
 
 
+class portfolio{
 
 
+
+
+    private getPortfolioItems(){
+        return document.querySelectorAll(".portfolio--glass");  
+    }
+
+    private getPortfolioDescriptions(){
+        return document.querySelectorAll(".item-description");
+    }
+
+    private createPortfolioItemPairs(){
+        let portfolioPairs = new Map();
+        let pItems:NodeListOf<Element> = this.getPortfolioItems();
+        let pDescription = this.getPortfolioDescriptions();
+
+        pItems.forEach(element => {
+            
+        });
+    }
+
+
+}
 
 
 
