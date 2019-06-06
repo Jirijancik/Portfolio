@@ -341,6 +341,26 @@ PORTFOLIO SECTION
   background-size: cover;
 }
 
+.portfolio__inner-content {
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  text-align: center;
+}
+
+.portfolio__inner-content:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.portfolio__inner-content__header {
+  padding-top: 35%;
+  font-size: 1.2vw;
+  margin-bottom: 8%;
+}
+
 .item-description {
   display: -ms-grid;
   display: grid;

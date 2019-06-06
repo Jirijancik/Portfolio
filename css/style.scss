@@ -275,7 +275,6 @@ PORTFOLIO SECTION
         min-height: 250px;
         min-width: 250px;
         
-
         border:1px solid rgba(0,0,0,0.5);
         border-radius:10px 10px 2px 2px;
 
@@ -287,6 +286,7 @@ PORTFOLIO SECTION
 		inset 0 -15px 30px rgba(0,0,0,0.3);
 	    background:$secondaryLightCollorOPA50;
     }
+
     &__first-section{
         background-image: url($imageTodoList);
         background-repeat: no-repeat;
@@ -301,6 +301,22 @@ PORTFOLIO SECTION
         background-image: url($imageDianellMorava);
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    &__inner-content{
+        height: 100%;
+        opacity: 0;
+        transition: all 0.2s ease; 
+        font-weight: 600;
+        text-align: center;
+    }
+    &__inner-content:hover{
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.7);
+    }
+    &__inner-content__header{
+        padding-top: 35%;
+        font-size: 1.2vw;
+        margin-bottom: 8%;
     }
 }
 

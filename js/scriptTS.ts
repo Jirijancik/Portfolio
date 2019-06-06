@@ -23,6 +23,41 @@ class mainPage{
 } 
 
 
+class heroSection{
+    _elementHeroButton:Element;
+    _elementHeroSection:Element;
+    _elementMain:Element;
+    _elementNavbar:Element;
+    _elementFooter:Element;
+    
+    
+    constructor(elementHeroButton:Element, elementHeroSection:Element, elementMain:Element, elementNavbar:Element, elementFooter:Element ){
+        this._elementHeroButton = elementHeroButton;
+        this._elementHeroSection = elementHeroSection;
+        this._elementMain = elementMain;
+        this._elementNavbar = elementNavbar;
+        this._elementFooter = elementFooter;
+        this.init();
+    };
+
+    private init(){
+        this.onHeroButtonClick();
+    }
+    
+    private onHeroButtonClick(){
+        this._elementHeroButton.addEventListener("click", ()=> this.hideHeroSection());
+    }
+
+    private hideHeroSection = () => {
+        this._elementHeroSection.classList.add("hero-section--hide");
+        this._elementMain.classList.remove("main--hide");
+        this._elementNavbar.classList.remove("navbar--hide");
+        this._elementFooter.classList.remove("footer--hide");
+    };
+}
+
+
+
 class navBar{
 
     _homeBtn:Element = document.querySelector(".navbar__nav__item.home-button")!;
@@ -90,38 +125,18 @@ class portfolio{
 
 
 
-class heroSection{
-    _elementHeroButton:Element;
-    _elementHeroSection:Element;
-    _elementMain:Element;
-    _elementNavbar:Element;
-    _elementFooter:Element;
-    
-    
-    constructor(elementHeroButton:Element, elementHeroSection:Element, elementMain:Element, elementNavbar:Element, elementFooter:Element ){
-        this._elementHeroButton = elementHeroButton;
-        this._elementHeroSection = elementHeroSection;
-        this._elementMain = elementMain;
-        this._elementNavbar = elementNavbar;
-        this._elementFooter = elementFooter;
-        this.init();
-    };
-
-    private init(){
-        this.onHeroButtonClick();
-    }
-    
-    private onHeroButtonClick(){
-        this._elementHeroButton.addEventListener("click", ()=> this.hideHeroSection());
-    }
-
-    private hideHeroSection = () => {
-        this._elementHeroSection.classList.add("hero-section--hide");
-        this._elementMain.classList.remove("main--hide");
-        this._elementNavbar.classList.remove("navbar--hide");
-        this._elementFooter.classList.remove("footer--hide");
-    };
-}
+// function myFunction() {
+//     var element = document.getElementById("elem");
+//     var delta = (window.pageYOffset)*1;
+//     var originx = window.getComputedStyle(element).top;
+//     const origin = parseInt(originx.slice(0,-2));
+//     let newPosition = 200 + delta;
+//     console.log(origin);
+//     element.style.top=`${newPosition}px`;
+//   //s
+   
+//   }
+//   window.onscroll = myFunction;
 
 
 
