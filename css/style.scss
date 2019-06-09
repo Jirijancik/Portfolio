@@ -296,6 +296,7 @@ PORTFOLIO SECTION
         background-image: url($imageWeatherApp);
         background-repeat: no-repeat;
         background-size: cover;
+        display: inline-block;
     }
     &__third-section{
         background-image: url($imageDianellMorava);
@@ -318,6 +319,7 @@ PORTFOLIO SECTION
         font-size: 1.2vw;
         margin-bottom: 8%;
     }
+    
 }
 
 .item-description{
@@ -327,16 +329,23 @@ PORTFOLIO SECTION
     margin-left: 12.5%;
     width: 65%;
     margin-bottom: 5%;
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
     &__header{
         text-align: center;
     }
     &__paragraph{
         padding: 1.5vw;
     }
-    &--hide{
-        display: none;
-    }
 
+
+}
+
+.visiblex{
+    opacity: 1 !important;
+    //height: 0px;
+    overflow: inherit !important;
 }
 
 
@@ -348,15 +357,31 @@ CONTACT SECTION
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
     height: 65vh;
-    &__main-header{
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: repeat(3, 1fr);
+    &__header-section{
+        grid-column: 1/-1;
+        font-size: 1.3vw;
         padding-top: 3.2vw;
         padding-left: 3.2vw;
     }
     &__main-paragraph{
         padding-left: 3.2vw;
     }
-    &__main-paragraph{
-        padding-left: 3.2vw;
+    &__section{
+     
+        text-align: center;
+        padding-top: 3.2vw;
+        margin-left: -12vw;
+    }
+    &__section__child-header{
+        font-size: 1vw;
+    }
+    &__icons{
+        width: 3vw;
+        background-color: white;
+        //margin-left: 2.5vw;
     }
 }
 

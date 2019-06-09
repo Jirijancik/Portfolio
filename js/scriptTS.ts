@@ -100,7 +100,13 @@ class navBar{
 class portfolio{
 
 
+    constructor(){
+        this.init();
+    }
 
+    private init(){
+        this.createPortfolioItemPairs();
+    }
 
     private getPortfolioItems(){
         return document.querySelectorAll(".portfolio--glass");  
@@ -111,16 +117,30 @@ class portfolio{
     }
 
     private createPortfolioItemPairs(){
-        let portfolioPairs = new Map();
-        let pItems:NodeListOf<Element> = this.getPortfolioItems();
+        
+        let pItems = this.getPortfolioItems();
         let pDescription = this.getPortfolioDescriptions();
 
-        pItems.forEach(element => {
-            
-        });
+        this.addEventListenersToDescriptions(pItems,pDescription)
     }
 
+    private addEventListenersToDescriptions(pItems:NodeListOf<Element>,pDescription:NodeListOf<Element>){
 
+        let i = 0;
+
+        for(let item of pItems){
+
+            item.addEventListener('mouseenter', e => this.onHover(pDescription[i])) 
+            i++;
+        }
+
+    }
+
+    private onHover(element:any){
+        let pDescription = this.getPortfolioDescriptions();
+        pDescription.forEach(item=>{item.classList.remove("visiblex")})
+        element.classList.add("visiblex")
+    }
 }
 
 
@@ -133,9 +153,9 @@ class portfolio{
 //     let newPosition = 200 + delta;
 //     console.log(origin);
 //     element.style.top=`${newPosition}px`;
-//   //s
+  
    
-//   }
+// }
 //   window.onscroll = myFunction;
 
 
@@ -143,3 +163,4 @@ class portfolio{
 
 let HeroSection = new heroSection(elementHeroButton, elementHeroSection,elementMain,elementNavbar,elementFooter);
 let NavBar = new navBar(elementHeroSection,elementMain,elementNavbar,elementFooter);
+let Portfolio = new portfolio();

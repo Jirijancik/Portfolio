@@ -20,7 +20,7 @@
 <body>
 
 
-  <Header class="hero-section hero-section--hide" id="home">
+  <Header class="hero-section" id="home">
     <div class="hero-section__logo">JJ</div>
     <h1 class="hero-section__header">Hello, I am glad you made it here in time.</h1>
     <p class="hero-section__paragraph">I will be your guide.</p>
@@ -34,14 +34,14 @@
       <ul class="navbar__nav__ul">
         <li><a class="navbar__nav__item home-button" href="#hero-section">Home</a></li>
         <li><a class="navbar__nav__item about-me-button" href="#about-me">About Me</a></li>
-        <li><a class="navbar__nav__item portfolio-button" href="/">Portfolio</a></li>
-        <li><a class="navbar__nav__item contact-button" href="/">Contact</a></li>
+        <li><a class="navbar__nav__item portfolio-button" href="#portfolio">Portfolio</a></li>
+        <li><a class="navbar__nav__item contact-button" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </aside>
 
 
-  <main class="main ">
+  <main class="main main--hide">
 
 
     <article class="skills" id="about-me">
@@ -88,7 +88,7 @@
       </section>
     </article>
 
-    <article class="portfolio">
+    <article class="portfolio" id="portfolio">
       <section class="portfolio__first-section portfolio--glass">
         <div class="portfolio__inner-content">
           <h2 class="portfolio__inner-content__header">Weather Application</h2>
@@ -122,8 +122,8 @@
       </p>
     </aside>
 
-    <aside class="item-description item-description--hide">
-      <h1 class="item-description__header">ToDo List</h1>
+    <aside class="item-description">
+      <h1 class="item-description__header">Weather App</h1>
       <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
         bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
         funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
@@ -131,8 +131,8 @@
       </p>
     </aside>
 
-    <aside class="item-description item-description--hide">
-      <h1 class="item-description__header">ToDo List</h1>
+    <aside class="item-description">
+      <h1 class="item-description__header">Dianell Webpage</h1>
       <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
         bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
         funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
@@ -141,29 +141,31 @@
     </aside>
 
 
-    <article class="contact">
+    <article class="contact" id="contact">
+      <section class="contact__header-section">
       <h1 class="contact__main-header">Hi, if you are still there...</h1>
       <p class="contact__main-paragraph">...don't wait and contact me right away</p>
-
+      </section>
       <section class="contact__section">
 
-        <h6 class="contact____section__child-header">Write me on Email:</h6>
+        <h6 class="contact__section__child-header">Write me on Email:</h6>
         <a>Jirijancik2@gmail.com</a>
 
       </section>
 
       <section class="contact__section">
 
-        <h6 class="contact____section__child-header">Or here on LinkedIn:</h6>
-        <a>https://www.linkedin.com/in/jancikjiri/</a>
+        <h6 class="contact__section__child-header">Or here on LinkedIn:</h6>
+        <a href="https://www.linkedin.com/in/jancikjiri/" target="_blank"><img class="contact__icons" src="./images/linkedin.png" alt="A logo for linkedin"></a>
+        
 
       </section>
 
       <section class="contact__section">
 
-        <h6 class="contact____section__child-header">Feel Free to</h6>
-        <a>Check my GitHUb</a>
-        <a>or Dribble</a>
+        <h6 class="contact__section__child-header">Feel Free to check my GitHUb</h6>
+
+        <a href="https://github.com/Jirijancik" target="_blank"><img class="contact__icons" src="./images/github-logo.png" alt="A logo for github"></a>
 
       </section>
     

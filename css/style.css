@@ -333,6 +333,7 @@ PORTFOLIO SECTION
   background-image: url("../images/weatherapp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  display: inline-block;
 }
 
 .portfolio__third-section {
@@ -370,6 +371,9 @@ PORTFOLIO SECTION
   margin-left: 12.5%;
   width: 65%;
   margin-bottom: 5%;
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
 }
 
 .item-description__header {
@@ -380,8 +384,9 @@ PORTFOLIO SECTION
   padding: 1.5vw;
 }
 
-.item-description--hide {
-  display: none;
+.visiblex {
+  opacity: 1 !important;
+  overflow: inherit !important;
 }
 
 /********************************************************
@@ -391,9 +396,17 @@ CONTACT SECTION
   background-color: #0C0F20;
   color: white;
   height: 65vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2;
+      grid-template-rows: 2;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
-.contact__main-header {
+.contact__header-section {
+  grid-column: 1/-1;
+  font-size: 1.3vw;
   padding-top: 3.2vw;
   padding-left: 3.2vw;
 }
@@ -402,8 +415,19 @@ CONTACT SECTION
   padding-left: 3.2vw;
 }
 
-.contact__main-paragraph {
-  padding-left: 3.2vw;
+.contact__section {
+  text-align: center;
+  padding-top: 3.2vw;
+  margin-left: -12vw;
+}
+
+.contact__section__child-header {
+  font-size: 1vw;
+}
+
+.contact__icons {
+  width: 3vw;
+  background-color: white;
 }
 
 /********************************************************
