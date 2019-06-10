@@ -5,10 +5,14 @@ $mainDarkCollor: #0C0F20;
 $mainLightCollor:rgb(255, 255, 255);
 $secondaryLightCollor: rgb(177, 188, 230);
 $secondaryLightCollorOPA50: rgba(177, 188, 230, 0.5);
-$fontTypeMainRoboto: 'Roboto Condensed', sans-serif;
-$fontTypeMontserrat: 'Montserrat', sans-serif;
-$fontTypeRaleway: 'Raleway', sans-serif;
-$fontTypeOpenSans: 'Open Sans', sans-serif;
+$fontTypeMainRoboto: 'Roboto Condensed',
+sans-serif;
+$fontTypeMontserrat: 'Montserrat',
+sans-serif;
+$fontTypeRaleway: 'Raleway',
+sans-serif;
+$fontTypeOpenSans: 'Open Sans',
+sans-serif;
 $taskFontSize: 20px;
 $animationTime: 0.45s;
 $imageTodoList: "../images/todolist.jpg";
@@ -16,76 +20,86 @@ $imageWeatherApp: "../images/weatherapp.jpg";
 $imageDianellMorava: "../images/dianellmorava.jpg";
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: $fontTypeMontserrat;
-
 }
 
 html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-    width: 0px; 
+    width: 0px;
 }
 
-.main--hide{
+.main--hide {
     height: 0px !important;
-    opacity:0 !important;
+    opacity: 0 !important;
     overflow: hidden !important;
 }
 
-.hero-section--hide{
-   display:none !important;
+.hero-section--hide {
+    display: none !important;
 }
-.navbar--hide{
+
+.navbar--hide {
     height: 0 !important;
-    opacity:0 !important;
+    opacity: 0 !important;
     overflow: hidden !important;
 }
-.main{
+
+.main {
     opacity: 1;
     transition: opacity $animationTime;
+}
+
+hr {
+    margin-top: -1%;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid $mainDarkCollor;
 }
 
 /********************************************************
 HERO SECTION
 ********************************************************/
 
-.hero-section{
+.hero-section {
     background-color: $mainDarkCollor;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    "logo logo logo logo . . . header header header header ."
-    ". . . . . . . paragraph paragraph button button ."
+    grid-template-areas:
+        "logo logo logo logo . . . header header header header ."
+        ". . . . . . . paragraph paragraph button button ."
     ;
 
     height: 100vh;
     margin: 0;
     padding: 0;
 
-    &__header{
+    &__header {
         color: $mainLightCollor;
         grid-area: header;
         align-self: end;
     }
 
-    &__paragraph{
+    &__paragraph {
         color: $mainLightCollor;
         grid-area: paragraph;
     }
 
-    &__logo{
+    &__logo {
         color: $mainLightCollor;
-       grid-area: logo;
+        grid-area: logo;
         font-size: 29vw;
     }
 
-    &__button{
+    &__button {
         align-self: start;
         justify-self: center;
         background-color: transparent;
@@ -97,18 +111,20 @@ HERO SECTION
         padding: 0.65rem 4rem;
         position: relative;
         transition: all $animationTime;
-      
     }
-    &__button:hover{
+
+    &__button:hover {
         background-color: $secondaryLightCollor;
         border: 2px solid $secondaryLightCollor;
         color: $mainDarkCollor;
         transition: all 0.15s;
     }
-    &__button:focus{
+
+    &__button:focus {
         outline: none;
     }
-    &__button:active{
+
+    &__button:active {
         border-radius: 22px;
         transition: all 0.25s;
     }
@@ -119,10 +135,10 @@ HERO SECTION
 NAVBAR SECTION
 ********************************************************/
 
-.navbar{
+.navbar {
     overflow: hidden;
     height: 100vh;
-    width:10%;
+    width: 10%;
     position: fixed;
     z-index: 9999;
     border-left: 2px dotted $mainDarkCollor;
@@ -131,18 +147,18 @@ NAVBAR SECTION
     background-color: $mainLightCollor;
     opacity: 1;
     transition: opacity $animationTime;
-    &__nav__item{
-        color:$mainDarkCollor;
+
+    &__nav__item {
+        color: $mainDarkCollor;
         text-decoration: none;
-        
     }
-    &__header{
+
+    &__header {
         text-align: center;
     }
-
 }
 
-li{
+li {
     margin: 20px 0px;
     display: block;
 }
@@ -154,72 +170,81 @@ li{
 SKILLS SECTION
 ********************************************************/
 
-.skills{
+.skills {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(600px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     grid-template-rows: auto;
     padding: 3vw 3vw;
-    margin: 8% 0 8% 20%;
-    
+    margin: 2.5% 0 8% 20%;
 
-    &__i-can-do-section{
+    &__i-can-do-section {
         max-width: 30%;
         top: -20%;
         position: relative;
         grid-auto-flow: row;
     }
-    &__header{
+
+    &__header {
         font-size: 22px;
         margin: 15% 0 15% 0;
     }
-    &__i-can-do-section p{
+
+    &__main-header {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 2vw;
+    }
+
+    &__i-can-do-section p {
         opacity: 0;
         position: relative;
-        animation-name:slowSlideToLeft;
+        animation-name: slowSlideToLeft;
         animation-duration: 2s;
         animation-fill-mode: forwards;
         animation-delay: 1s;
         animation-timing-function: ease;
     }
+
     @keyframes slowSlideToLeft {
         0% {
-            left:-30px;
+            left: -30px;
             opacity: 0.2;
         }
 
         100% {
-            left:10px;
+            left: 10px;
             opacity: 1;
         }
 
     }
 
-    &__i-love-section{
+    &__i-love-section {
         position: relative;
         top: 20%;
         grid-auto-flow: row;
         max-width: 30%;
     }
-    &__i-love-section p{
+
+    &__i-love-section p {
         opacity: 0;
         position: relative;
-        animation-name:slowSlideToRight;
+        animation-name: slowSlideToRight;
         animation-duration: 2s;
         animation-fill-mode: forwards;
         animation-delay: 1s;
         animation-timing-function: ease;
     }
+
     @keyframes slowSlideToRight {
         0% {
-            right:-45px;
+            right: -45px;
             opacity: 0;
         }
 
         100% {
-            right:-10px;
+            right: -10px;
             opacity: 1;
         }
-
     }
 }
 
@@ -230,13 +255,13 @@ SKILLS SECTION
 ABOUT ME SETION
 ********************************************************/
 
-.about-me{
+.about-me {
     display: grid;
     grid-template-columns: 3fr 9fr;
     height: 35vh;
     background-color: $mainDarkCollor;
 
-    &__profile-picture{
+    &__profile-picture {
         height: 35vh;
         right: -3vw;
         top: 4vh;
@@ -244,7 +269,8 @@ ABOUT ME SETION
         position: relative;
         border-radius: 100%;
     }
-    &__text-section{
+
+    &__text-section {
         color: $mainLightCollor;
         align-self: center;
         font-size: 1.2vw;
@@ -259,93 +285,116 @@ PORTFOLIO SECTION
 ********************************************************/
 
 
-.portfolio{
-    
+.portfolio {
+
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 30vw));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 30vw));
     grid-template-rows: auto;
     max-height: 600px;
-
     height: 80vh;
-    &--glass{
+
+    &--glass {
         justify-self: center;
         align-self: center;
         width: 60%;
         height: 55%;
         min-height: 250px;
         min-width: 250px;
-        
-        border:1px solid rgba(0,0,0,0.5);
-        border-radius:10px 10px 2px 2px;
-
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 10px 10px 2px 2px;
         box-shadow:
-		0 2px 6px rgba(0,0,0,0.5),
-		inset 0 1px rgba(255,255,255,0.3),
-		inset 0 10px rgba(255,255,255,0.2),
-		inset 0 10px 20px rgba(255,255,255,0.25),
-		inset 0 -15px 30px rgba(0,0,0,0.3);
-	    background:$secondaryLightCollorOPA50;
+            0 2px 6px rgba(0, 0, 0, 0.5),
+            inset 0 1px rgba(255, 255, 255, 0.3),
+            inset 0 10px rgba(255, 255, 255, 0.2),
+            inset 0 10px 20px rgba(255, 255, 255, 0.25),
+            inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+        background: $secondaryLightCollorOPA50;
     }
 
-    &__first-section{
+    &__first-section {
         background-image: url($imageTodoList);
         background-repeat: no-repeat;
         background-size: cover;
     }
-    &__second-section{
+
+    &__second-section {
         background-image: url($imageWeatherApp);
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
     }
-    &__third-section{
+
+    &__third-section {
         background-image: url($imageDianellMorava);
         background-repeat: no-repeat;
         background-size: cover;
     }
-    &__inner-content{
+
+    &__inner-content {
         height: 100%;
         opacity: 0;
-        transition: all 0.2s ease; 
+        transition: all 0.2s ease;
         font-weight: 600;
         text-align: center;
     }
-    &__inner-content:hover{
+
+    &__inner-content:hover {
         opacity: 1;
-        background: rgba(255, 255, 255, 0.7);
+        background: $mainDarkCollor;
+        color: $mainLightCollor;
+        border-radius: 7px;
     }
-    &__inner-content__header{
+
+    &__inner-content__header {
+        margin-top: 0;
         padding-top: 35%;
         font-size: 1.2vw;
         margin-bottom: 8%;
     }
-    
+
+    &__main-header {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 2vw;
+    }
 }
 
-.item-description{
+.item-description {
     display: grid;
     grid-template-rows: 2;
     background-color: $secondaryLightCollorOPA50;
     margin-left: 12.5%;
     width: 65%;
-    margin-bottom: 5%;
     opacity: 0;
     height: 0px;
     overflow: hidden;
-    &__header{
+
+    &__header {
         text-align: center;
     }
-    &__paragraph{
+
+    &__paragraph {
         padding: 1.5vw;
     }
-
-
 }
 
-.visiblex{
+.link {
+    text-decoration: underline black;
+    color: $mainDarkCollor;
+    font-size: 0.8vw;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.visible_tooltip {
     opacity: 1 !important;
-    //height: 0px;
     overflow: inherit !important;
+    margin-bottom: 3%;
+    height: auto;
+    border-radius: 2px;
+    background-color: rgba(212, 212, 212, 0.425);
+    transition: height 0.25s opacity 0.45s;
+    box-shadow: 0px 0px 4px 0px rgba(33, 0, 64, 0.15), 0px 0px 2px 0px rgba(33, 0, 64, 0.4);
 }
 
 
@@ -353,35 +402,39 @@ PORTFOLIO SECTION
 /********************************************************
 CONTACT SECTION
 ********************************************************/
-.contact{
+.contact {
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
     height: 65vh;
     display: grid;
     grid-template-rows: 2;
     grid-template-columns: repeat(3, 1fr);
-    &__header-section{
+
+    &__header-section {
         grid-column: 1/-1;
         font-size: 1.3vw;
         padding-top: 3.2vw;
         padding-left: 3.2vw;
     }
-    &__main-paragraph{
+
+    &__main-paragraph {
         padding-left: 3.2vw;
     }
-    &__section{
-     
+
+    &__section {
+
         text-align: center;
         padding-top: 3.2vw;
         margin-left: -12vw;
     }
-    &__section__child-header{
+
+    &__section__child-header {
         font-size: 1vw;
     }
-    &__icons{
+
+    &__icons {
         width: 3vw;
-        background-color: white;
-        //margin-left: 2.5vw;
+        background-color: $mainLightCollor;
     }
 }
 
@@ -390,19 +443,17 @@ CONTACT SECTION
 FOOTER SECTION
 ********************************************************/
 
-.footer{
+.footer {
     margin: 0;
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
     z-index: 999999999999999;
 
-    &__author{
+    &__author {
         margin: 0;
     }
-    &--hide{
-        display:none;
+
+    &--hide {
+        display: none;
     }
-
 }
-
-

@@ -43,8 +43,10 @@
 
   <main class="main main--hide">
 
+    <h1 class="skills__main-header" id="about-me">Skills</h1>
+    <hr>
+    <article class="skills">
 
-    <article class="skills" id="about-me">
       <section class="skills__i-can-do-section">
         <h1 class="skills__header">Things I Can Do</h1>
         <p>HTML5</p>
@@ -88,63 +90,85 @@
       </section>
     </article>
 
-    <article class="portfolio" id="portfolio">
-      <section class="portfolio__first-section portfolio--glass">
-        <div class="portfolio__inner-content">
-          <h2 class="portfolio__inner-content__header">Weather Application</h2>
-          <p>-Usage of React</p>
-          <p>-With Firebase backend</p>
-        </div>
+    <h1 class="portfolio__main-header" id="portfolio">Portfolio</h1>
+    <hr>
+    <article class="portfolio">
+
+      <section class="portfolio__first-section portfolio--glass" data-id="weather">
+        <a href="https://github.com/Jirijancik/TodoList">
+          <div class="portfolio__inner-content">
+            <h2 class="portfolio__inner-content__header">Weather Application</h2>
+            <p>-Usage of React</p>
+            <p>-With Firebase backend</p>
+          </div>
+        </a>
       </section>
-      <section class="portfolio__second-section portfolio--glass">
+
+
+
+
+      <section class="portfolio__second-section portfolio--glass" data-id="TODO">
         <div class="portfolio__inner-content">
           <h2 class="portfolio__inner-content__header">TODO Application</h2>
           <p>-Usage of vanilla JS</p>
           <p>-With API fetching and CSS-BEM</p>
         </div>
       </section>
-      <section class="portfolio__third-section portfolio--glass">
+
+
+      <section class="portfolio__third-section portfolio--glass" data-id="DIANELL">
         <div class="portfolio__inner-content">
           <h2 class="portfolio__inner-content__header">DIANELL MORAVA Webpage</h2>
           <p>-A Custom Project</p>
           <p>-Responsive</p>
         </div>
       </section>
+
+
     </article>
 
 
-    <aside class="item-description">
+    <aside class="item-description" data-id="weather">
       <h1 class="item-description__header">ToDo List:</h1>
       <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
-        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
+        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán
+        spíše
         funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
-        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+        <br>
+        <a class="link" target="_blank" href="https://github.com/Jirijancik/TodoList">Repozitář na Githubu</a>
+        <br>
+        <a class="link" target="_blank" href="https://jirijancik.github.io/TodoList/">Náhled stránky</a>
       </p>
     </aside>
 
-    <aside class="item-description">
+    <aside class="item-description" data-id="TODO">
       <h1 class="item-description__header">Weather App</h1>
-      <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
-        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
-        funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
-        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+      <p class="item-description__paragraph">Tato aplikace je jednoduchá WeatherApp. Vznikla za učelem prohloubení
+        znalosti programování v React a ptohlobení si fetch API.
+        V budoucnu plánuji přidat REDUX, vyhledávání počasí pro libovolná města a zakoponovat geolokaci.
+        <br>
+        <a class="link" target="_blank" href="https://jirijancik.github.io/WeatherAppReact/">Repozitář na Githubu</a>
       </p>
     </aside>
 
-    <aside class="item-description">
+    <aside class="item-description" data-id="DIANELL">
       <h1 class="item-description__header">Dianell Webpage</h1>
-      <p class="item-description__paragraph">Snažil jsem se o vytvoření produktu, s čistým a jednoduchým designem
-        bez použití žádných knihoven třetí strany. Tento projekt je provázaný s NoSQL FireBase DB. Projekt je napsán spíše 
-        funkcionální způsobem. V budoucnu plánuji refactoring JS logiky, přidání update funkcionalit a jiné.
-        <a target="_blank" href="https://jirijancik.github.io/TodoList/">Více na Githubu</a>
+      <p class="item-description__paragraph">DIANELL MORAVA je chovatelská stanice chovající Auvergneské ohaře.
+        Tato stránka vznikla jako moje první zakázka. V budoucnu plánuji refactor HTML přepis css do BEM a optimalizaci
+        JS.
+        <br>
+        <a class="link" target="_blank" href="https://jirijancik.github.io/DianellMoravaWebPage/">Repozitář na
+          Githubu</a>
+        <br>
+        <a class="link" target="_blank" href="https://jirijancik.github.io/DianellMoravaWebPage/">Náhled stránky</a>
       </p>
     </aside>
 
 
     <article class="contact" id="contact">
       <section class="contact__header-section">
-      <h1 class="contact__main-header">Hi, if you are still there...</h1>
-      <p class="contact__main-paragraph">...don't wait and contact me right away</p>
+        <h1 class="contact__main-header">Hi, if you are still there...</h1>
+        <p class="contact__main-paragraph">...don't wait and contact me right away</p>
       </section>
       <section class="contact__section">
 
@@ -156,8 +180,9 @@
       <section class="contact__section">
 
         <h6 class="contact__section__child-header">Or here on LinkedIn:</h6>
-        <a href="https://www.linkedin.com/in/jancikjiri/" target="_blank"><img class="contact__icons" src="./images/linkedin.png" alt="A logo for linkedin"></a>
-        
+        <a href="https://www.linkedin.com/in/jancikjiri/" target="_blank"><img class="contact__icons"
+            src="./images/linkedin.png" alt="A logo for linkedin"></a>
+
 
       </section>
 
@@ -165,12 +190,13 @@
 
         <h6 class="contact__section__child-header">Feel Free to check my GitHUb</h6>
 
-        <a href="https://github.com/Jirijancik" target="_blank"><img class="contact__icons" src="./images/github-logo.png" alt="A logo for github"></a>
+        <a href="https://github.com/Jirijancik" target="_blank"><img class="contact__icons"
+            src="./images/github-logo.png" alt="A logo for github"></a>
 
       </section>
-    
+
     </article>
-    
+
   </main>
 
 
@@ -181,7 +207,7 @@
 
   </footer>
 
-<script language="JavaScript" type="text/javascript" src="js/scriptTS.js"></script>
+  <script language="JavaScript" type="text/javascript" src="js/scriptTS.js"></script>
 
 </body>
 

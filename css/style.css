@@ -38,6 +38,14 @@ html {
   transition: opacity 0.45s;
 }
 
+hr {
+  margin-top: -1%;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #0C0F20;
+}
+
 /********************************************************
 HERO SECTION
 ********************************************************/
@@ -165,7 +173,7 @@ SKILLS SECTION
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   padding: 3vw 3vw;
-  margin: 8% 0 8% 20%;
+  margin: 2.5% 0 8% 20%;
 }
 
 .skills__i-can-do-section {
@@ -178,6 +186,12 @@ SKILLS SECTION
 .skills__header {
   font-size: 22px;
   margin: 15% 0 15% 0;
+}
+
+.skills__main-header {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 2vw;
 }
 
 .skills__i-can-do-section p {
@@ -353,13 +367,22 @@ PORTFOLIO SECTION
 
 .portfolio__inner-content:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.7);
+  background: #0C0F20;
+  color: white;
+  border-radius: 7px;
 }
 
 .portfolio__inner-content__header {
+  margin-top: 0;
   padding-top: 35%;
   font-size: 1.2vw;
   margin-bottom: 8%;
+}
+
+.portfolio__main-header {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 2vw;
 }
 
 .item-description {
@@ -370,7 +393,6 @@ PORTFOLIO SECTION
   background-color: rgba(177, 188, 230, 0.5);
   margin-left: 12.5%;
   width: 65%;
-  margin-bottom: 5%;
   opacity: 0;
   height: 0px;
   overflow: hidden;
@@ -384,9 +406,26 @@ PORTFOLIO SECTION
   padding: 1.5vw;
 }
 
-.visiblex {
+.link {
+  -webkit-text-decoration: underline black;
+          text-decoration: underline black;
+  color: #0C0F20;
+  font-size: 0.8vw;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.visible_tooltip {
   opacity: 1 !important;
   overflow: inherit !important;
+  margin-bottom: 3%;
+  height: auto;
+  border-radius: 2px;
+  background-color: rgba(212, 212, 212, 0.425);
+  -webkit-transition: height 0.25s opacity 0.45s;
+  transition: height 0.25s opacity 0.45s;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(33, 0, 64, 0.15), 0px 0px 2px 0px rgba(33, 0, 64, 0.4);
+          box-shadow: 0px 0px 4px 0px rgba(33, 0, 64, 0.15), 0px 0px 2px 0px rgba(33, 0, 64, 0.4);
 }
 
 /********************************************************

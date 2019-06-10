@@ -1,50 +1,23 @@
 "use strict";
-var elementMain = document.querySelector("main");
-var elementHeroButton = document.querySelector(".hero-section__button");
-var elementHeroSection = document.querySelector(".hero-section");
-var elementNavbar = document.querySelector(".navbar");
-var elementFooter = document.querySelector(".footer");
-//need to make a main class - T0
-var mainPage = /** @class */ (function () {
-    function mainPage(navBar) {
-        this._navBar = navBar;
-    }
-    return mainPage;
-}());
-var navBar = /** @class */ (function () {
-    function navBar(elementHeroSection, elementMain, elementNavbar, elementFooter) {
-        var _this = this;
-        this._homeBtn = document.querySelector(".navbar__nav__item.home-button");
-        this.showHeroSection = function () {
-            _this._elementHeroSection.classList.remove("hero-section--hide");
-            _this._elementMain.classList.add("main--hide");
-            _this._elementNavbar.classList.add("navbar--hide");
-            _this._elementFooter.classList.add("footer--hide");
+/***********************************************
+ VARIABLES
+***********************************************/
+const elementMain = document.querySelector("main");
+const elementHeroButton = document.querySelector(".hero-section__button");
+const elementHeroSection = document.querySelector(".hero-section");
+const elementNavbar = document.querySelector(".navbar");
+const elementFooter = document.querySelector(".footer");
+class HeroSection {
+    constructor(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter) {
+        // Funkce pro schování hero sekce a zobrazení zbytku stránky
+        this.hideHeroSection = () => {
+            this._elementHeroSection.classList.add("hero-section--hide");
+            this._elementMain.classList.remove("main--hide");
+            this._elementNavbar.classList.remove("navbar--hide");
+            this._elementFooter.classList.remove("footer--hide");
         };
-        this._elementHeroSection = elementHeroSection;
-        this._elementMain = elementMain;
-        this._elementNavbar = elementNavbar;
-        this._elementFooter = elementFooter;
-        this.init();
-    }
-    navBar.prototype.init = function () {
-        this.onHomeBtnClick();
-    };
-    navBar.prototype.onHomeBtnClick = function () {
-        var _this = this;
-        this._homeBtn.addEventListener("click", function () { return _this.showHeroSection(); });
-    };
-    return navBar;
-}());
-var heroSection = /** @class */ (function () {
-    function heroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter) {
-        var _this = this;
-        this.hideHeroSection = function () {
-            _this._elementHeroSection.classList.add("hero-section--hide");
-            _this._elementMain.classList.remove("main--hide");
-            _this._elementNavbar.classList.remove("navbar--hide");
-            _this._elementFooter.classList.remove("footer--hide");
-        };
+        if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter)
+            throw Error("Element nebyl nalezen");
         this._elementHeroButton = elementHeroButton;
         this._elementHeroSection = elementHeroSection;
         this._elementMain = elementMain;
@@ -53,14 +26,73 @@ var heroSection = /** @class */ (function () {
         this.init();
     }
     ;
-    heroSection.prototype.init = function () {
+    init() {
         this.onHeroButtonClick();
-    };
-    heroSection.prototype.onHeroButtonClick = function () {
-        var _this = this;
-        this._elementHeroButton.addEventListener("click", function () { return _this.hideHeroSection(); });
-    };
-    return heroSection;
-}());
-var HeroSection = new heroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
-var NavBar = new navBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
+    }
+    onHeroButtonClick() {
+        this._elementHeroButton.addEventListener("click", () => this.hideHeroSection());
+    }
+}
+class NavBar {
+    constructor(elementHeroSection, elementMain, elementNavbar, elementFooter) {
+        this._homeBtn = document.querySelector(".navbar__nav__item.home-button");
+        // Funkce pro zobrazení hero sekce při kliku na Home
+        this.showHeroSection = () => {
+            this._elementHeroSection.classList.remove("hero-section--hide");
+            this._elementMain.classList.add("main--hide");
+            this._elementNavbar.classList.add("navbar--hide");
+            this._elementFooter.classList.add("footer--hide");
+        };
+        if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter)
+            throw Error("Element nebyl nalezen");
+        this._elementHeroSection = elementHeroSection;
+        this._elementMain = elementMain;
+        this._elementNavbar = elementNavbar;
+        this._elementFooter = elementFooter;
+        this.init();
+    }
+    init() {
+        this.onHomeBtnClick();
+    }
+    onHomeBtnClick() {
+        this._homeBtn.addEventListener("click", () => this.showHeroSection());
+    }
+}
+class Portfolio {
+    constructor() {
+        this.init();
+    }
+    init() {
+        this.addEventListenersToDescriptions();
+    }
+    getPortfolioItems() {
+        return document.querySelectorAll(".portfolio--glass");
+    }
+    // Funkce pro přidání Eventlistenerů za spárování portolio itemů s popisky 
+    // zapomocí data-id
+    addEventListenersToDescriptions() {
+        let pItems = this.getPortfolioItems();
+        let i = 0;
+        for (let item of pItems) {
+            const descriptionWithDataID = document.querySelector(`.item-description[data-id=${item.getAttribute("data-id")}]`);
+            if (!descriptionWithDataID) {
+                continue;
+            }
+            item.addEventListener('mouseenter', () => this.onHover(descriptionWithDataID));
+            i++;
+        }
+    }
+    // Funkce pro získání všech item popisků
+    getPortfolioDescriptions() {
+        return document.querySelectorAll(".item-description");
+    }
+    // Funkce onHover schová všechny popis. a poté zobrazí cílený popisek
+    onHover(element) {
+        let pDescription = this.getPortfolioDescriptions();
+        pDescription.forEach(item => { item.classList.remove("visible_tooltip"); });
+        element.classList.add("visible_tooltip");
+    }
+}
+let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
+let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
+let portfolio = new Portfolio();
