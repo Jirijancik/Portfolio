@@ -172,14 +172,14 @@ SKILLS SECTION
 
 .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     grid-template-rows: auto;
     padding: 3vw 3vw;
-    margin: 2.5% 0 8% 20%;
+    margin: 2.5% 0 20% 16vw;
 
     &__i-can-do-section {
-        max-width: 30%;
-        top: -20%;
+     
+        top: -3vw;
         position: relative;
         grid-auto-flow: row;
     }
@@ -192,7 +192,7 @@ SKILLS SECTION
     &__main-header {
         text-align: center;
         margin-top: 5%;
-        font-size: 2vw;
+        font-size: 30px;
     }
 
     &__i-can-do-section p {
@@ -220,9 +220,9 @@ SKILLS SECTION
 
     &__i-love-section {
         position: relative;
-        top: 20%;
+        top: 3vw;
         grid-auto-flow: row;
-        max-width: 30%;
+       
     }
 
     &__i-love-section p {
@@ -296,8 +296,8 @@ PORTFOLIO SECTION
     &--glass {
         justify-self: center;
         align-self: center;
-        width: 60%;
-        height: 55%;
+        width: 19vw;
+        height: 17vw;
         min-height: 250px;
         min-width: 250px;
         border: 1px solid rgba(0, 0, 0, 0.5);
@@ -455,5 +455,125 @@ FOOTER SECTION
 
     &--hide {
         display: none;
+    }
+}
+
+
+
+/********************************************************
+MEDIA QUERIES - 1100px
+********************************************************/
+@media only screen and (max-width: 1150px) {
+    /********************************************************
+    HERO SECTION
+    ********************************************************/
+
+    .hero-section{
+        grid-template-rows: 8fr 1fr 2fr 1fr;
+
+        grid-template-areas: 
+        "logo logo logo logo . header header header header . . ."
+        ". . . . . paragraph paragraph . . . . ."
+        ". . . . . . . button button . . ."
+        ". . . . . . . . . . . ."
+        ;
+
+        &__logo{
+            font-size:22em;
+        }
+
+        &__button{
+            align-self: start;
+            justify-self: center;
+            background-color: transparent;
+            border: 2px solid $mainLightCollor;
+            border-radius: 28px;
+            color: $mainLightCollor;
+            font-size: 1.6rem;
+            grid-area: button;
+            padding: 0.85rem 5rem;
+            position: relative;
+            transition: all 0.15s;
+        
+        }
+        &__button:hover{
+            background-color: $secondaryLightCollor;
+            border: 2px solid $secondaryLightCollor;
+            color: $mainDarkCollor;
+            transition: all 0.15s;
+        }
+    }
+
+
+    /********************************************************
+    ABOUT ME SETION
+    ********************************************************/
+
+    .about-me{
+        height: 22vw;
+        &__profile-picture{
+            height: 22vw;
+        }
+        &__text-section{
+            font-size: 15px;
+            padding-right: 16%;
+        }
+    }
+    
+    /********************************************************
+    PORTFOLIO SECTION
+    ********************************************************/
+
+
+    .portfolio{
+        
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(300px, 550px));
+        grid-template-rows: auto;
+        height: 80vh;
+        margin-right: auto;
+        margin-left: auto;
+        &--glass{
+            justify-self: center;
+            align-self: center;
+            width: 55%;
+            height: 45%;
+            
+
+            border:1px solid rgba(0,0,0,0.5);
+            border-radius:10px 10px 2px 2px;
+
+            box-shadow:
+            0 2px 6px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 10px rgba(255,255,255,0.2),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+            background:$secondaryLightCollorOPA50;
+        }
+        &__first-section{
+            background-image: url($imageTodoList);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .item-description{
+        display: grid;
+        grid-template-rows: 2;
+        background-color: $secondaryLightCollorOPA50;
+        margin-left: 12.5%;
+        width: 65%;
+        margin-bottom: 5%;
+        &__header{
+            text-align: center;
+        }
+        &__paragraph{
+            padding: 1.5vw;
+        }
+        &--hide{
+            display: none;
+        }
+
     }
 }

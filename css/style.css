@@ -168,17 +168,16 @@ SKILLS SECTION
 .skills {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(600px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   padding: 3vw 3vw;
-  margin: 2.5% 0 8% 20%;
+  margin: 2.5% 0 20% 16vw;
 }
 
 .skills__i-can-do-section {
-  max-width: 30%;
-  top: -20%;
+  top: -3vw;
   position: relative;
   grid-auto-flow: row;
 }
@@ -191,7 +190,7 @@ SKILLS SECTION
 .skills__main-header {
   text-align: center;
   margin-top: 5%;
-  font-size: 2vw;
+  font-size: 30px;
 }
 
 .skills__i-can-do-section p {
@@ -233,9 +232,8 @@ SKILLS SECTION
 
 .skills__i-love-section {
   position: relative;
-  top: 20%;
+  top: 3vw;
   grid-auto-flow: row;
-  max-width: 30%;
 }
 
 .skills__i-love-section p {
@@ -326,8 +324,8 @@ PORTFOLIO SECTION
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 60%;
-  height: 55%;
+  width: 19vw;
+  height: 17vw;
   min-height: 250px;
   min-width: 250px;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -485,5 +483,114 @@ FOOTER SECTION
 
 .footer--hide {
   display: none;
+}
+
+/********************************************************
+MEDIA QUERIES - 1100px
+********************************************************/
+@media only screen and (max-width: 1150px) {
+  /********************************************************
+    HERO SECTION
+    ********************************************************/
+  .hero-section {
+    -ms-grid-rows: 8fr 1fr 2fr 1fr;
+        grid-template-rows: 8fr 1fr 2fr 1fr;
+        grid-template-areas: "logo logo logo logo . header header header header . . ." ". . . . . paragraph paragraph . . . . ." ". . . . . . . button button . . ." ". . . . . . . . . . . .";
+  }
+  .hero-section__logo {
+    font-size: 22em;
+  }
+  .hero-section__button {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 28px;
+    color: white;
+    font-size: 1.6rem;
+    -ms-grid-row: 3;
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 2;
+    grid-area: button;
+    padding: 0.85rem 5rem;
+    position: relative;
+    -webkit-transition: all 0.15s;
+    transition: all 0.15s;
+  }
+  .hero-section__button:hover {
+    background-color: #b1bce6;
+    border: 2px solid #b1bce6;
+    color: #0C0F20;
+    -webkit-transition: all 0.15s;
+    transition: all 0.15s;
+  }
+  /********************************************************
+    ABOUT ME SETION
+    ********************************************************/
+  .about-me {
+    height: 22vw;
+  }
+  .about-me__profile-picture {
+    height: 22vw;
+  }
+  .about-me__text-section {
+    font-size: 15px;
+    padding-right: 16%;
+  }
+  /********************************************************
+    PORTFOLIO SECTION
+    ********************************************************/
+  .portfolio {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(300px, 550px))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 550px));
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    height: 80vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .portfolio--glass {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 55%;
+    height: 45%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px 10px 2px 2px;
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(177, 188, 230, 0.5);
+  }
+  .portfolio__first-section {
+    background-image: url("../images/todolist.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .item-description {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2;
+        grid-template-rows: 2;
+    background-color: rgba(177, 188, 230, 0.5);
+    margin-left: 12.5%;
+    width: 65%;
+    margin-bottom: 5%;
+  }
+  .item-description__header {
+    text-align: center;
+  }
+  .item-description__paragraph {
+    padding: 1.5vw;
+  }
+  .item-description--hide {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
