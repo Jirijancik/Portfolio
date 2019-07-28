@@ -405,16 +405,18 @@ CONTACT SECTION
 .contact {
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
-    height: 65vh;
+    height: 40vh;
     display: grid;
     grid-template-rows: 2;
     grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 2vh;
 
     &__header-section {
         grid-column: 1/-1;
         font-size: 1.3vw;
-        padding-top: 3.2vw;
+        padding-top: 1.2vw;
         padding-left: 3.2vw;
+        height: 15vh;
     }
 
     &__main-paragraph {
@@ -424,7 +426,6 @@ CONTACT SECTION
     &__section {
 
         text-align: center;
-        padding-top: 3.2vw;
         margin-left: -12vw;
     }
 
@@ -445,12 +446,16 @@ FOOTER SECTION
 
 .footer {
     margin: 0;
+    padding: 0;
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
     z-index: 999999999999999;
-
+  
     &__author {
         margin: 0;
+ 
+        margin-right: 11.5%;
+        text-align: end;
     }
 
     &--hide {
