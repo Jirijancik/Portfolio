@@ -178,7 +178,6 @@ SKILLS SECTION
     margin: 2.5% 0 8% 16vw;
 
     &__i-can-do-section {
-     
         top: -3vw;
         position: relative;
         grid-auto-flow: row;
@@ -290,8 +289,14 @@ PORTFOLIO SECTION
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 30vw));
     grid-template-rows: auto;
-    max-height: 600px;
-    height: 80vh;
+    min-height: 350px;
+    height: 50vh;
+
+    &__main-header {
+        text-align: center;
+        font-size: 22px;
+        margin: 10% 0 2% 0;
+    }
 
     &--glass {
         justify-self: center;
@@ -300,8 +305,7 @@ PORTFOLIO SECTION
         height: 17vw;
         min-height: 250px;
         min-width: 250px;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        border-radius: 10px 10px 2px 2px;
+        border-radius: 2px 2px 2px 2px;
         box-shadow:
             0 2px 6px rgba(0, 0, 0, 0.5),
             inset 0 1px rgba(255, 255, 255, 0.3),
@@ -350,12 +354,6 @@ PORTFOLIO SECTION
         padding-top: 35%;
         font-size: 1.2vw;
         margin-bottom: 8%;
-    }
-
-    &__main-header {
-        text-align: center;
-        margin-top: 5%;
-        font-size: 2vw;
     }
 }
 
@@ -413,14 +411,14 @@ CONTACT SECTION
 
     &__header-section {
         grid-column: 1/-1;
-        font-size: 1.3vw;
+        font-size: 1.3rem;
         padding-top: 1.2vw;
-        padding-left: 3.2vw;
+        padding-left: 3rem;
         height: 15vh;
     }
 
     &__main-paragraph {
-        padding-left: 3.2vw;
+        padding-left: 3rem;
     }
 
     &__section {
@@ -430,11 +428,11 @@ CONTACT SECTION
     }
 
     &__section__child-header {
-        font-size: 1vw;
+        font-size: 1rem;
     }
 
     &__icons {
-        width: 3vw;
+        width: 3rem;
         background-color: $mainLightCollor;
     }
 }
@@ -477,10 +475,9 @@ MEDIA QUERIES - 1100px
         grid-template-rows: 8fr 1fr 2fr 1fr;
 
         grid-template-areas: 
-        "logo logo logo logo . header header header header . . ."
-        ". . . . . paragraph paragraph . . . . ."
-        ". . . . . . . button button . . ."
-        ". . . . . . . . . . . ."
+        "logo logo logo logo . header header header header header . ."
+        ". . . . . paragraph paragraph paragraph paragraph . . ."
+        ". . . . . button button . . . . ."
         ;
 
         &__logo{
@@ -488,7 +485,7 @@ MEDIA QUERIES - 1100px
         }
 
         &__button{
-            align-self: start;
+            align-self: end;
             justify-self: center;
             background-color: transparent;
             border: 2px solid $mainLightCollor;
@@ -499,7 +496,6 @@ MEDIA QUERIES - 1100px
             padding: 0.85rem 5rem;
             position: relative;
             transition: all 0.15s;
-        
         }
         &__button:hover{
             background-color: $secondaryLightCollor;
@@ -507,6 +503,16 @@ MEDIA QUERIES - 1100px
             color: $mainDarkCollor;
             transition: all 0.15s;
         }
+    }
+
+
+        
+    /********************************************************
+    NAVBAR SECTION
+    ********************************************************/
+
+    .navbar {
+    display: none;
     }
 
 
@@ -533,34 +539,13 @@ MEDIA QUERIES - 1100px
     .portfolio{
         
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, 550px));
+        grid-template-columns: repeat( auto-fit);
         grid-template-rows: auto;
-        height: 80vh;
+        grid-template-rows: auto;
+        height: 20rem;
         margin-right: auto;
         margin-left: auto;
-        &--glass{
-            justify-self: center;
-            align-self: center;
-            width: 55%;
-            height: 45%;
-            
 
-            border:1px solid rgba(0,0,0,0.5);
-            border-radius:10px 10px 2px 2px;
-
-            box-shadow:
-            0 2px 6px rgba(0,0,0,0.5),
-            inset 0 1px rgba(255,255,255,0.3),
-            inset 0 10px rgba(255,255,255,0.2),
-            inset 0 10px 20px rgba(255,255,255,0.25),
-            inset 0 -15px 30px rgba(0,0,0,0.3);
-            background:$secondaryLightCollorOPA50;
-        }
-        &__first-section{
-            background-image: url($imageTodoList);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
     }
 
     .item-description{
@@ -568,8 +553,8 @@ MEDIA QUERIES - 1100px
         grid-template-rows: 2;
         background-color: $secondaryLightCollorOPA50;
         margin-left: 12.5%;
-        width: 65%;
-        margin-bottom: 5%;
+        width: 75%;
+   
         &__header{
             text-align: center;
         }

@@ -132,6 +132,7 @@ class Portfolio {
 
 
 
+
 let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
 let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
 let portfolio = new Portfolio();

@@ -314,8 +314,14 @@ PORTFOLIO SECTION
       grid-template-columns: repeat(auto-fit, minmax(300px, 30vw));
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  max-height: 600px;
-  height: 80vh;
+  min-height: 350px;
+  height: 50vh;
+}
+
+.portfolio__main-header {
+  text-align: center;
+  font-size: 22px;
+  margin: 10% 0 2% 0;
 }
 
 .portfolio--glass {
@@ -328,8 +334,7 @@ PORTFOLIO SECTION
   height: 17vw;
   min-height: 250px;
   min-width: 250px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 10px 10px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
   background: rgba(177, 188, 230, 0.5);
@@ -375,12 +380,6 @@ PORTFOLIO SECTION
   padding-top: 35%;
   font-size: 1.2vw;
   margin-bottom: 8%;
-}
-
-.portfolio__main-header {
-  text-align: center;
-  margin-top: 5%;
-  font-size: 2vw;
 }
 
 .item-description {
@@ -444,14 +443,14 @@ CONTACT SECTION
 
 .contact__header-section {
   grid-column: 1/-1;
-  font-size: 1.3vw;
+  font-size: 1.3rem;
   padding-top: 1.2vw;
-  padding-left: 3.2vw;
+  padding-left: 3rem;
   height: 15vh;
 }
 
 .contact__main-paragraph {
-  padding-left: 3.2vw;
+  padding-left: 3rem;
 }
 
 .contact__section {
@@ -460,11 +459,11 @@ CONTACT SECTION
 }
 
 .contact__section__child-header {
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 .contact__icons {
-  width: 3vw;
+  width: 3rem;
   background-color: white;
 }
 
@@ -499,15 +498,15 @@ MEDIA QUERIES - 1100px
   .hero-section {
     -ms-grid-rows: 8fr 1fr 2fr 1fr;
         grid-template-rows: 8fr 1fr 2fr 1fr;
-        grid-template-areas: "logo logo logo logo . header header header header . . ." ". . . . . paragraph paragraph . . . . ." ". . . . . . . button button . . ." ". . . . . . . . . . . .";
+        grid-template-areas: "logo logo logo logo . header header header header header . ." ". . . . . paragraph paragraph paragraph paragraph . . ." ". . . . . button button . . . . .";
   }
   .hero-section__logo {
     font-size: 22em;
   }
   .hero-section__button {
-    -ms-flex-item-align: start;
-        -ms-grid-row-align: start;
-        align-self: start;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
     -ms-grid-column-align: center;
         justify-self: center;
     background-color: transparent;
@@ -516,7 +515,7 @@ MEDIA QUERIES - 1100px
     color: white;
     font-size: 1.6rem;
     -ms-grid-row: 3;
-    -ms-grid-column: 8;
+    -ms-grid-column: 6;
     -ms-grid-column-span: 2;
     grid-area: button;
     padding: 0.85rem 5rem;
@@ -530,6 +529,12 @@ MEDIA QUERIES - 1100px
     color: #0C0F20;
     -webkit-transition: all 0.15s;
     transition: all 0.15s;
+  }
+  /********************************************************
+    NAVBAR SECTION
+    ********************************************************/
+  .navbar {
+    display: none;
   }
   /********************************************************
     ABOUT ME SETION
@@ -550,32 +555,14 @@ MEDIA QUERIES - 1100px
   .portfolio {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(300px, 550px))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(300px, 550px));
+    -ms-grid-columns: ()[auto-fit];
+        grid-template-columns: repeat(auto-fit);
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-    height: 80vh;
+    grid-template-rows: auto;
+    height: 20rem;
     margin-right: auto;
     margin-left: auto;
-  }
-  .portfolio--glass {
-    -ms-grid-column-align: center;
-        justify-self: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    width: 55%;
-    height: 45%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 10px 10px 2px 2px;
-    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-    background: rgba(177, 188, 230, 0.5);
-  }
-  .portfolio__first-section {
-    background-image: url("../images/todolist.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
   }
   .item-description {
     display: -ms-grid;
@@ -584,8 +571,7 @@ MEDIA QUERIES - 1100px
         grid-template-rows: 2;
     background-color: rgba(177, 188, 230, 0.5);
     margin-left: 12.5%;
-    width: 65%;
-    margin-bottom: 5%;
+    width: 75%;
   }
   .item-description__header {
     text-align: center;
