@@ -175,10 +175,11 @@ SKILLS SECTION
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     grid-template-rows: auto;
     padding: 3vw 3vw;
-    margin: 2.5% 0 8% 16vw;
+    width: 85%;
+   
 
     &__i-can-do-section {
-        top: -3vw;
+      //  top: -3vw;
         position: relative;
         grid-auto-flow: row;
     }
@@ -219,7 +220,7 @@ SKILLS SECTION
 
     &__i-love-section {
         position: relative;
-        top: 3vw;
+        //top: 3vw;
         grid-auto-flow: row;
        
     }

@@ -19,5 +19,12 @@
   "homepage": "https://github.com/Jirijancik/MyWebpage#readme",
   "devDependencies": {
     "lite-server": "^2.4.0"
+  },
+  "dependencies": {
+    "@types/chart.js": "^2.8.3",
+    "chart.js": "^2.8.0",
+    "requirejs": "^2.3.6",
+    "typescript": "^3.6.3",
+    "typescript-require": "^0.2.10"
   }
 }

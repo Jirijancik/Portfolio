@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <script> var exports = {}; </script>
+  <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
@@ -49,29 +51,18 @@
 
       <section class="skills__i-can-do-section">
         <h1 class="skills__header">Things I Can Do</h1>
-        <p>HTML5</p>
-        <p>CSS</p>
-        <p>JavaScript</p>
-        <p>C#</p>
-        <p>SQL</p>
-        <p>Selenium</p>
-        <p>React</p>
-        <p>Git</p>
-        <p>Typescript</p>
+
+        <div class="container">
+          <canvas id="myChartSkills"></canvas>
+        </div>
       </section>
 
 
       <section class="skills__i-love-section">
-        <p>Jokes</p>
-        <p>Learning New things</p>
-        <p>It</p>
-        <p>Video Games</p>
-        <p>My Dog</p>
-        <p>Sience</p>
-        <p>Chockolate</p>
-        <p>Parties With Coworkers</p>
-        <p>Creating Things</p>
         <h1 class="skills__header">Things I Love</h1>
+        <div class="container">
+            <canvas id="myChartLove"></canvas>
+        </div>
       </section>
     </article>
 

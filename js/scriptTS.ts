@@ -1,6 +1,8 @@
 /***********************************************
  VARIABLES
 ***********************************************/
+
+
 const elementMain = document.querySelector("main");
 const elementHeroButton = document.querySelector(".hero-section__button");
 const elementHeroSection = document.querySelector(".hero-section");
@@ -8,8 +10,110 @@ const elementNavbar = document.querySelector(".navbar");
 const elementFooter = document.querySelector(".footer");
 
 
+let myChartSkills = <HTMLCanvasElement> document.getElementById('myChartSkills');
+let myChartLove = <HTMLCanvasElement> document.getElementById('myChartLove');
+var ctxs = myChartSkills.getContext("2d")!;
+var ctxl = myChartLove.getContext("2d")!;
 
 
+let radarChartSkills = new Chart(ctxs, {
+  type:'radar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['HTML5', 'CSS', 'JavaScript', 'C#', 'SQL', 'Selenium', 'React', 'Git', 'Typescript'],
+    datasets:[{
+      label:"",
+      data: [9,8,7,4,2,5,5,4,5],
+      //backgroundColor:'green',
+      backgroundColor:[
+        'rgba(47, 58, 125, 0.7)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)'
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000'
+    }]
+  },
+  options:{
+    title:{
+      display:false,
+      text:'Things I Can Do',
+      fontSize:25
+    },
+    legend:{
+      display:false,
+      position:'right',
+      labels:{
+        fontColor:'#000'
+      }
+    },
+    layout:{
+      padding:{
+        left:50,
+        right:0,
+        bottom:0,
+        top:0
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
+
+
+let radarChartLove = new Chart(ctxl, {
+  type:'radar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['Jokes', 'Learning New things', 'IT', 'Video Games', 'My Dog', 'Chockolate', 'Parties With Coworkers', 'Creating Things', 'Sience'],
+    datasets:[{
+      label:"",
+      data: [7,10,9,9,11,4,7,10,7],
+      //backgroundColor:'green',
+      backgroundColor:[
+        'rgba(125, 47, 58, 0.7)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)',
+        'rgba(26, 32, 69, 0.6)'
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000'
+    }]
+  },
+  options:{
+    title:{
+      display:false,
+      text:'Things I Can Do',
+      fontSize:25
+    },
+    legend:{
+      display:true,
+      position:'right',
+      labels:{
+        fontColor:'#000'
+      }
+    },
+    layout:{
+      padding:{
+        left:50,
+        right:0,
+        bottom:0,
+        top:0
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
 
 class HeroSection {
     _elementHeroButton: Element;
@@ -136,3 +240,6 @@ class Portfolio {
 let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
 let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
 let portfolio = new Portfolio();
+
+// console.log(ctx);
+console.log("see");
