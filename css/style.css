@@ -182,6 +182,7 @@ SKILLS SECTION
 }
 
 .skills__header {
+  text-align: center;
   font-size: 22px;
   margin: 15% 0 15% 0;
 }
@@ -298,8 +299,9 @@ ABOUT ME SETION
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 1.2vw;
+  font-size: 1.2em;
   padding-right: 18%;
+  padding-left: 10%;
 }
 
 /********************************************************
@@ -380,6 +382,10 @@ PORTFOLIO SECTION
   margin-bottom: 8%;
 }
 
+.portfolio__link, .portfolio__link:visited, .portfolio__link:hover, .portfolio__link:active {
+  text-decoration: none;
+}
+
 .item-description {
   display: -ms-grid;
   display: grid;
@@ -405,9 +411,9 @@ PORTFOLIO SECTION
   -webkit-text-decoration: underline black;
           text-decoration: underline black;
   color: #0C0F20;
-  font-size: 0.8vw;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .visible_tooltip {
@@ -553,12 +559,92 @@ MEDIA QUERIES - 1100px
   .portfolio {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: ()[auto-fit];
-        grid-template-columns: repeat(auto-fit);
+    -ms-grid-columns: (minmax(265px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     grid-template-rows: auto;
     height: 20rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .item-description {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2;
+        grid-template-rows: 2;
+    background-color: rgba(177, 188, 230, 0.5);
+    margin-left: 12.5%;
+    width: 75%;
+  }
+  .item-description__header {
+    text-align: center;
+  }
+  .item-description__paragraph {
+    padding: 1.5vw;
+  }
+  .item-description--hide {
+    display: none;
+  }
+  /********************************************************
+    CONTACT SECTION
+    ********************************************************/
+  .contact {
+    background-color: #0C0F20;
+    color: white;
+    height: 40vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2;
+        grid-template-rows: 2;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 2vh;
+  }
+  .contact__header-section {
+    grid-column: 1/-1;
+    font-size: 1.3rem;
+    padding-top: 1.2vw;
+    padding-left: 3rem;
+    height: 15vh;
+  }
+  .contact__main-paragraph {
+    padding-left: 3rem;
+  }
+  .contact__section {
+    text-align: center;
+    margin-left: 0vw;
+  }
+  .contact__section__child-header {
+    font-size: 1rem;
+  }
+  .contact__icons {
+    width: 3rem;
+    background-color: white;
+  }
+  /********************************************************
+    FOOTER SECTION
+    ********************************************************/
+  .footer__author {
+    margin-right: 5.5%;
+  }
+}
+
+/********************************************************
+MEDIA QUERIES - 800px
+********************************************************/
+@media only screen and (max-width: 800px) {
+  .portfolio {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(265px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    grid-template-rows: auto;
+    height: 20rem;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
   }

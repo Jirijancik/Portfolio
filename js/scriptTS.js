@@ -88,7 +88,7 @@ let radarChartLove = new Chart(ctxl, {
             fontSize: 25
         },
         legend: {
-            display: true,
+            display: false,
             position: 'right',
             labels: {
                 fontColor: '#000'
@@ -159,7 +159,8 @@ class NavBar {
     }
 }
 class Portfolio {
-    constructor() {
+    constructor(isTouchDevice) {
+        this._isTouchDevice = isTouchDevice;
         this.init();
     }
     init() {
@@ -178,13 +179,23 @@ class Portfolio {
             if (!descriptionWithDataID) {
                 continue;
             }
-            item.addEventListener('mouseenter', () => this.onHover(descriptionWithDataID));
+            this.addEventListenerToDescrItem(item, descriptionWithDataID);
             i++;
         }
     }
     // Funkce pro získání všech item popisků
     getPortfolioDescriptions() {
         return document.querySelectorAll(".item-description");
+    }
+    // Funkce pro pžidání event listeneru jednotlivým popiskům, Rozlišení Pro TOUCH
+    addEventListenerToDescrItem(item, description) {
+        let isTouch = isTouchDevice();
+        console.log(isTouch);
+        if (!isTouch) {
+            return item.addEventListener('mouseenter', () => this.onHover(description));
+        }
+        else
+            return item.addEventListener('touchstart', () => this.onHover(description));
     }
     // Funkce onHover schová všechny popis. a poté zobrazí cílený popisek
     onHover(element) {
@@ -195,6 +206,14 @@ class Portfolio {
 }
 let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
 let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
-let portfolio = new Portfolio();
-// console.log(ctx);
-console.log("see");
+let portfolio = new Portfolio(isTouchDevice());
+//Funkce pro detekci touch zařízení
+function isTouchDevice() {
+    if (('ontouchstart' in window)) {
+        console.log("istouch");
+        return true;
+    }
+    else
+        console.log("isNOTtouch");
+    return false;
+}

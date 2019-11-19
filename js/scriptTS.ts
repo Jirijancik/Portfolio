@@ -10,21 +10,21 @@ const elementNavbar = document.querySelector(".navbar");
 const elementFooter = document.querySelector(".footer");
 
 
-let myChartSkills = <HTMLCanvasElement> document.getElementById('myChartSkills');
-let myChartLove = <HTMLCanvasElement> document.getElementById('myChartLove');
+let myChartSkills = <HTMLCanvasElement>document.getElementById('myChartSkills');
+let myChartLove = <HTMLCanvasElement>document.getElementById('myChartLove');
 var ctxs = myChartSkills.getContext("2d")!;
 var ctxl = myChartLove.getContext("2d")!;
 
 
 let radarChartSkills = new Chart(ctxs, {
-  type:'radar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-  data:{
-    labels:['HTML5', 'CSS', 'JavaScript', 'C#', 'SQL', 'Selenium', 'React', 'Git', 'Typescript'],
-    datasets:[{
-      label:"",
-      data: [9,8,7,4,2,5,5,4,5],
+  type: 'radar',
+  data: {
+    labels: ['HTML5', 'CSS', 'JavaScript', 'C#', 'SQL', 'Selenium', 'React', 'Git', 'Typescript'],
+    datasets: [{
+      label: "",
+      data: [9, 8, 7, 4, 2, 5, 5, 4, 5],
       //backgroundColor:'green',
-      backgroundColor:[
+      backgroundColor: [
         'rgba(47, 58, 125, 0.7)',
         'rgba(26, 32, 69, 0.6)',
         'rgba(26, 32, 69, 0.6)',
@@ -32,49 +32,49 @@ let radarChartSkills = new Chart(ctxs, {
         'rgba(26, 32, 69, 0.6)',
         'rgba(26, 32, 69, 0.6)'
       ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor:'#000'
+      borderWidth: 1,
+      borderColor: '#777',
+      hoverBorderWidth: 3,
+      hoverBorderColor: '#000'
     }]
   },
-  options:{
-    title:{
-      display:false,
-      text:'Things I Can Do',
-      fontSize:25
+  options: {
+    title: {
+      display: false,
+      text: 'Things I Can Do',
+      fontSize: 25
     },
-    legend:{
-      display:false,
-      position:'right',
-      labels:{
-        fontColor:'#000'
+    legend: {
+      display: false,
+      position: 'right',
+      labels: {
+        fontColor: '#000'
       }
     },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
+    layout: {
+      padding: {
+        left: 50,
+        right: 0,
+        bottom: 0,
+        top: 0
       }
     },
-    tooltips:{
-      enabled:true
+    tooltips: {
+      enabled: true
     }
   }
 });
 
 
 let radarChartLove = new Chart(ctxl, {
-  type:'radar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-  data:{
-    labels:['Jokes', 'Learning New things', 'IT', 'Video Games', 'My Dog', 'Chockolate', 'Parties With Coworkers', 'Creating Things', 'Sience'],
-    datasets:[{
-      label:"",
-      data: [7,10,9,9,11,4,7,10,7],
+  type: 'radar',
+  data: {
+    labels: ['Jokes', 'Learning New things', 'IT', 'Video Games', 'My Dog', 'Chockolate', 'Parties With Coworkers', 'Creating Things', 'Sience'],
+    datasets: [{
+      label: "",
+      data: [7, 10, 9, 9, 11, 4, 7, 10, 7],
       //backgroundColor:'green',
-      backgroundColor:[
+      backgroundColor: [
         'rgba(125, 47, 58, 0.7)',
         'rgba(26, 32, 69, 0.6)',
         'rgba(26, 32, 69, 0.6)',
@@ -82,111 +82,111 @@ let radarChartLove = new Chart(ctxl, {
         'rgba(26, 32, 69, 0.6)',
         'rgba(26, 32, 69, 0.6)'
       ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor:'#000'
+      borderWidth: 1,
+      borderColor: '#777',
+      hoverBorderWidth: 3,
+      hoverBorderColor: '#000'
     }]
   },
-  options:{
-    title:{
-      display:false,
-      text:'Things I Can Do',
-      fontSize:25
+  options: {
+    title: {
+      display: false,
+      text: 'Things I Can Do',
+      fontSize: 25
     },
-    legend:{
-      display:true,
-      position:'right',
-      labels:{
-        fontColor:'#000'
+    legend: {
+      display: false,
+      position: 'right',
+      labels: {
+        fontColor: '#000'
       }
     },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
+    layout: {
+      padding: {
+        left: 50,
+        right: 0,
+        bottom: 0,
+        top: 0
       }
     },
-    tooltips:{
-      enabled:true
+    tooltips: {
+      enabled: true
     }
   }
 });
 
 class HeroSection {
-    _elementHeroButton: Element;
-    _elementHeroSection: Element;
-    _elementMain: Element;
-    _elementNavbar: Element;
-    _elementFooter: Element;
+  _elementHeroButton: Element;
+  _elementHeroSection: Element;
+  _elementMain: Element;
+  _elementNavbar: Element;
+  _elementFooter: Element;
 
-    constructor(elementHeroButton: Element | null, elementHeroSection: Element | null, elementMain: Element | null, elementNavbar: Element | null, elementFooter: Element | null) {
-        if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter) throw Error("Element nebyl nalezen");
+  constructor(elementHeroButton: Element | null, elementHeroSection: Element | null, elementMain: Element | null, elementNavbar: Element | null, elementFooter: Element | null) {
+    if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter) throw Error("Element nebyl nalezen");
 
-        this._elementHeroButton = elementHeroButton;
-        this._elementHeroSection = elementHeroSection;
-        this._elementMain = elementMain;
-        this._elementNavbar = elementNavbar;
-        this._elementFooter = elementFooter;
-        this.init();
-    };
+    this._elementHeroButton = elementHeroButton;
+    this._elementHeroSection = elementHeroSection;
+    this._elementMain = elementMain;
+    this._elementNavbar = elementNavbar;
+    this._elementFooter = elementFooter;
+    this.init();
+  };
 
-    private init() {
-        this.onHeroButtonClick();
-    }
+  private init() {
+    this.onHeroButtonClick();
+  }
 
-    private onHeroButtonClick() {
-        this._elementHeroButton.addEventListener("click", () => this.hideHeroSection());
-    }
+  private onHeroButtonClick() {
+    this._elementHeroButton.addEventListener("click", () => this.hideHeroSection());
+  }
 
-    // Funkce pro schování hero sekce a zobrazení zbytku stránky
-    private hideHeroSection = () => {
-        this._elementHeroSection.classList.add("hero-section--hide");
-        this._elementMain.classList.remove("main--hide");
-        this._elementNavbar.classList.remove("navbar--hide");
-        this._elementFooter.classList.remove("footer--hide");
-    };
+  // Funkce pro schování hero sekce a zobrazení zbytku stránky
+  private hideHeroSection = () => {
+    this._elementHeroSection.classList.add("hero-section--hide");
+    this._elementMain.classList.remove("main--hide");
+    this._elementNavbar.classList.remove("navbar--hide");
+    this._elementFooter.classList.remove("footer--hide");
+  };
 }
 
 
 
 class NavBar {
 
-    _homeBtn: Element = document.querySelector(".navbar__nav__item.home-button")!;
-    _elementHeroSection: Element;
-    _elementMain: Element;
-    _elementNavbar: Element;
-    _elementFooter: Element;
+  _homeBtn: Element = document.querySelector(".navbar__nav__item.home-button")!;
+  _elementHeroSection: Element;
+  _elementMain: Element;
+  _elementNavbar: Element;
+  _elementFooter: Element;
 
 
-    constructor(elementHeroSection: Element | null, elementMain: Element | null, elementNavbar: Element | null, elementFooter: Element | null) {
-        if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter) throw Error("Element nebyl nalezen");
-        this._elementHeroSection = elementHeroSection;
-        this._elementMain = elementMain;
-        this._elementNavbar = elementNavbar;
-        this._elementFooter = elementFooter;
+  constructor(elementHeroSection: Element | null, elementMain: Element | null, elementNavbar: Element | null, elementFooter: Element | null) {
+    if (!elementHeroButton || !elementHeroSection || !elementMain || !elementNavbar || !elementFooter) throw Error("Element nebyl nalezen");
+    this._elementHeroSection = elementHeroSection;
+    this._elementMain = elementMain;
+    this._elementNavbar = elementNavbar;
+    this._elementFooter = elementFooter;
 
 
-        this.init();
-    }
+    this.init();
+  }
 
-    private init() {
-        this.onHomeBtnClick();
-    }
+  private init() {
+    this.onHomeBtnClick();
+  }
 
-    private onHomeBtnClick() {
-        this._homeBtn.addEventListener("click", () => this.showHeroSection());
-    }
+  private onHomeBtnClick() {
+    this._homeBtn.addEventListener("click", () => this.showHeroSection());
+  }
 
-    // Funkce pro zobrazení hero sekce při kliku na Home
-    private showHeroSection = () => {
-        this._elementHeroSection.classList.remove("hero-section--hide");
-        this._elementMain.classList.add("main--hide");
-        this._elementNavbar.classList.add("navbar--hide");
-        this._elementFooter.classList.add("footer--hide");
-    };
+  // Funkce pro zobrazení hero sekce při kliku na Home
+  private showHeroSection = () => {
+    this._elementHeroSection.classList.remove("hero-section--hide");
+    this._elementMain.classList.add("main--hide");
+    this._elementNavbar.classList.add("navbar--hide");
+    this._elementFooter.classList.add("footer--hide");
+  };
 
 }
 
@@ -194,44 +194,58 @@ class NavBar {
 
 
 class Portfolio {
-    constructor() {
-        this.init();
-    }
+  _isTouchDevice: Boolean;
 
-    private init() {
-        this.addEventListenersToDescriptions();
-    }
+  constructor(isTouchDevice: Boolean) {
+    this._isTouchDevice = isTouchDevice;
+    this.init();
+  }
 
-    private getPortfolioItems() {
-        return document.querySelectorAll(".portfolio--glass");
-    }
+  private init() {
+    this.addEventListenersToDescriptions();
+  }
 
-    // Funkce pro přidání Eventlistenerů za spárování portolio itemů s popisky 
-    // zapomocí data-id
-    private addEventListenersToDescriptions() {
-        let pItems = this.getPortfolioItems();
-        let i = 0;
-        for (let item of pItems) {
-            const descriptionWithDataID = document.querySelector(`.item-description[data-id=${item.getAttribute("data-id")}]`)
-            if (!descriptionWithDataID) {
-                continue;
-            }
-            item.addEventListener('mouseenter', () => this.onHover(descriptionWithDataID))
-            i++;
-        }
-    }
+  private getPortfolioItems() {
+    return document.querySelectorAll(".portfolio--glass");
+  }
 
-    // Funkce pro získání všech item popisků
-    private getPortfolioDescriptions() {
-        return document.querySelectorAll(".item-description");
-    }
+  // Funkce pro přidání Eventlistenerů za spárování portolio itemů s popisky 
+  // zapomocí data-id
+  private addEventListenersToDescriptions() {
+    let pItems = this.getPortfolioItems();
+    let i = 0;
+    for (let item of pItems) {
+      const descriptionWithDataID = document.querySelector(`.item-description[data-id=${item.getAttribute("data-id")}]`)
+      if (!descriptionWithDataID) {
+        continue;
+      }
 
-    // Funkce onHover schová všechny popis. a poté zobrazí cílený popisek
-    private onHover(element: Element) {
-        let pDescription = this.getPortfolioDescriptions();
-        pDescription.forEach(item => { item.classList.remove("visible_tooltip") })
-        element.classList.add("visible_tooltip")
+      this.addEventListenerToDescrItem(item, descriptionWithDataID);
+      i++;
     }
+  }
+
+  // Funkce pro získání všech item popisků
+  private getPortfolioDescriptions() {
+    return document.querySelectorAll(".item-description");
+  }
+
+  // Funkce pro pžidání event listeneru jednotlivým popiskům, Rozlišení Pro TOUCH
+  private addEventListenerToDescrItem(item: Element, description: Element) {
+    let isTouch= isTouchDevice();
+    console.log(isTouch);
+    if (!isTouch) {
+      return item.addEventListener('mouseenter', () => this.onHover(description));
+    } else
+      return item.addEventListener('touchstart', () => this.onHover(description));
+  }
+
+  // Funkce onHover schová všechny popis. a poté zobrazí cílený popisek
+  private onHover(element: Element) {
+    let pDescription = this.getPortfolioDescriptions();
+    pDescription.forEach(item => { item.classList.remove("visible_tooltip") })
+    element.classList.add("visible_tooltip")
+  }
 }
 
 
@@ -239,7 +253,19 @@ class Portfolio {
 
 let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
 let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
-let portfolio = new Portfolio();
+let portfolio = new Portfolio(isTouchDevice());
 
-// console.log(ctx);
-console.log("see");
+
+//Funkce pro detekci touch zařízení
+function isTouchDevice() {
+
+  if (('ontouchstart' in window)) {
+    console.log("istouch");
+    return true;
+  }
+  else
+    console.log("isNOTtouch");
+  return false;
+
+}
+
