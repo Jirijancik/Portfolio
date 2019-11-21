@@ -638,8 +638,8 @@ MEDIA QUERIES - 800px
   .portfolio {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(265px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    -ms-grid-columns: (minmax(265px, 400px))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(265px, 400px));
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     grid-template-rows: auto;
