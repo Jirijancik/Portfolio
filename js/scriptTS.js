@@ -7,6 +7,7 @@ const elementHeroButton = document.querySelector(".hero-section__button");
 const elementHeroSection = document.querySelector(".hero-section");
 const elementNavbar = document.querySelector(".navbar");
 const elementFooter = document.querySelector(".footer");
+console.log(elementHeroButton.getBoundingClientRect());
 let myChartSkills = document.getElementById('myChartSkills');
 let myChartLove = document.getElementById('myChartLove');
 var ctxs = myChartSkills.getContext("2d");
@@ -204,6 +205,49 @@ class Portfolio {
         element.classList.add("visible_tooltip");
     }
 }
+const track = document.querySelector('.carousel__track');
+const previousButton = document.querySelector('.carousel__button--left');
+const nextButton = document.querySelector('.carousel__button--right');
+const slides = Array.from(track.children);
+const slideWidth = slides[0].getBoundingClientRect().width;
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
+};
+slides.forEach(setSlidePosition);
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left;
+    +')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+};
+const hideShowButtons = (slides, previousButton, nextButton, targetIndex) => {
+    if (targetIndex == 0) {
+        previousButton.classList.add('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }
+    else if (targetIndex === slides.length - 1) {
+        previousButton.classList.remove('is-hidden');
+        nextButton.classList.add('is-hidden');
+    }
+    else {
+        previousButton.classList.remove('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }
+};
+nextButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const nextSlideIndex = slides.findIndex(slide => slide === nextSlide);
+    moveToSlide(track, currentSlide, nextSlide);
+    hideShowButtons(slides, previousButton, nextButton, nextSlideIndex);
+});
+previousButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const previousSlide = currentSlide.previousElementSibling;
+    const previousSlideIndex = slides.findIndex(slide => slide === previousSlide);
+    moveToSlide(track, currentSlide, previousSlide);
+    hideShowButtons(slides, previousButton, nextButton, previousSlideIndex);
+});
 let heroSection = new HeroSection(elementHeroButton, elementHeroSection, elementMain, elementNavbar, elementFooter);
 let navBar = new NavBar(elementHeroSection, elementMain, elementNavbar, elementFooter);
 let portfolio = new Portfolio(isTouchDevice());

@@ -4,11 +4,12 @@
 
 
 const elementMain = document.querySelector("main");
-const elementHeroButton = document.querySelector(".hero-section__button");
+const elementHeroButton = document.querySelector(".hero-section__button")!;
 const elementHeroSection = document.querySelector(".hero-section");
 const elementNavbar = document.querySelector(".navbar");
 const elementFooter = document.querySelector(".footer");
 
+console.log(elementHeroButton.getBoundingClientRect());
 
 let myChartSkills = <HTMLCanvasElement>document.getElementById('myChartSkills');
 let myChartLove = <HTMLCanvasElement>document.getElementById('myChartLove');
@@ -247,6 +248,63 @@ class Portfolio {
     element.classList.add("visible_tooltip")
   }
 }
+
+
+
+
+
+
+const track = <HTMLElement>document.querySelector('.carousel__track')!;
+const previousButton = document.querySelector('.carousel__button--left')!;
+const nextButton = document.querySelector('.carousel__button--right')!;
+const slides = <HTMLElement[]>Array.from(track.children);
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+
+const setSlidePosition = (slide:HTMLElement, index:number) => {
+  slide.style.left = slideWidth * index + 'px';
+}
+
+slides.forEach(setSlidePosition);
+
+const moveToSlide = (track:HTMLElement, currentSlide:HTMLElement, targetSlide:HTMLElement) =>{
+  track.style.transform='translateX(-'+ targetSlide.style.left; + ')';
+  currentSlide.classList.remove('current-slide');
+  targetSlide.classList.add('current-slide');
+}
+
+const hideShowButtons = (slides:Element[], previousButton:Element, nextButton:Element, targetIndex:number) => {
+    if(targetIndex == 0){
+        previousButton.classList.add('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }else if(targetIndex === slides.length -1){
+        previousButton.classList.remove('is-hidden');
+        nextButton.classList.add('is-hidden');
+    }else {
+        previousButton.classList.remove('is-hidden');
+        nextButton.classList.remove('is-hidden');  
+    }
+}
+
+nextButton.addEventListener('click', e=> {
+  const currentSlide= <HTMLElement>track.querySelector('.current-slide')!;
+  const nextSlide= <HTMLElement>currentSlide.nextElementSibling!;
+  const nextSlideIndex= slides.findIndex(slide => slide === nextSlide);
+
+  moveToSlide(track, currentSlide, nextSlide);
+  hideShowButtons(slides, previousButton, nextButton, nextSlideIndex)
+});
+
+
+previousButton.addEventListener('click', e=> {
+    const currentSlide= <HTMLElement>track.querySelector('.current-slide')!;
+    const previousSlide= <HTMLElement>currentSlide.previousElementSibling!;
+    const previousSlideIndex= slides.findIndex(slide => slide === previousSlide);
+
+    moveToSlide(track, currentSlide, previousSlide);
+    hideShowButtons(slides, previousButton, nextButton, previousSlideIndex);
+});
+
 
 
 

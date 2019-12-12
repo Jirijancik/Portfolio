@@ -19,7 +19,6 @@ $imageTodoList: "../images/todolist.jpg";
 $imageWeatherApp: "../images/weatherapp.jpg";
 $imageDianellMorava: "../images/dianellmorava.jpg";
 
-
 body {
     margin: 0;
     padding: 0;
@@ -172,14 +171,14 @@ SKILLS SECTION
 
 .skills {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: auto;
     padding: 3vw 3vw;
     width: 85%;
-   
+
 
     &__i-can-do-section {
-      //  top: -3vw;
+        //  top: -3vw;
         position: relative;
         grid-auto-flow: row;
     }
@@ -221,9 +220,8 @@ SKILLS SECTION
 
     &__i-love-section {
         position: relative;
-        //top: 3vw;
         grid-auto-flow: row;
-       
+
     }
 
     &__i-love-section p {
@@ -297,7 +295,7 @@ PORTFOLIO SECTION
 
     &__main-header {
         text-align: center;
-        font-size: 22px;
+        font-size: 30px;
         margin: 10% 0 2% 0;
     }
 
@@ -355,12 +353,15 @@ PORTFOLIO SECTION
     &__inner-content__header {
         margin-top: 0;
         padding-top: 35%;
-        font-size: 1.2vw;
+        font-size: 1.5em;
         margin-bottom: 8%;
     }
 
-    &__link, &__link:visited, &__link:hover, &__link:active{
-        text-decoration:none;
+    &__link,
+    &__link:visited,
+    &__link:hover,
+    &__link:active {
+        text-decoration: none;
     }
 }
 
@@ -400,6 +401,133 @@ PORTFOLIO SECTION
     background-color: rgba(212, 212, 212, 0.425);
     transition: height 0.25s opacity 0.45s;
     box-shadow: 0px 0px 4px 0px rgba(33, 0, 64, 0.15), 0px 0px 2px 0px rgba(33, 0, 64, 0.4);
+}
+
+
+
+/********************************************************
+PORTFOLIO CAROUSEL SECTION
+********************************************************/
+
+
+.carousel {
+    display: none;
+    position: relative;
+    height: 60vh;
+    width: 80%;
+    margin: 5vh auto;
+    &__button{
+        height: 94%;
+        background: rgba(0,0,0,0.03);
+        border: none;
+        width: 20%;
+        font-size: 2.5rem;
+        color: #0C0F20;
+        cursor: pointer;
+    }
+    &__button:focus{
+        outline:none;
+        color:rgb(56, 92, 133);
+    }
+}
+
+.carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__track-container {
+    background: transparent;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel__button--right {
+    right: 0;
+}
+
+.carousel__button--left {
+    left: 0;
+    z-index: 9999;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.carousel__porfolio-item--first {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 10px rgba(255, 255, 255, 0.2),
+        inset 0 10px 20px rgba(255, 255, 255, 0.25),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    background-image: url($imageTodoList);
+    background-size: 100% 100%;
+}
+
+.carousel__porfolio-item--second {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 10px rgba(255, 255, 255, 0.2),
+        inset 0 10px 20px rgba(255, 255, 255, 0.25),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    background-image: url($imageWeatherApp);
+    background-size: 100% 100%;
+}
+
+.carousel__porfolio-item--third {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 10px rgba(255, 255, 255, 0.2),
+        inset 0 10px 20px rgba(255, 255, 255, 0.25),
+        inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    background-image: url($imageDianellMorava);
+    background-size: 100% 100%;
 }
 
 
@@ -455,10 +583,10 @@ FOOTER SECTION
     background-color: $mainDarkCollor;
     color: $mainLightCollor;
     z-index: 999999999999999;
-  
+
     &__author {
         margin: 0;
- 
+
         margin-right: 11.5%;
         text-align: end;
     }
@@ -480,20 +608,20 @@ MEDIA QUERIES - 1100px
     HERO SECTION
     ********************************************************/
 
-    .hero-section{
+    .hero-section {
         grid-template-rows: 8fr 1fr 2fr 1fr;
 
-        grid-template-areas: 
-        "logo logo logo logo . header header header header header . ."
-        ". . . . . paragraph paragraph paragraph paragraph . . ."
-        ". . . . . button button . . . . ."
+        grid-template-areas:
+            "logo logo logo logo . header header header header header . ."
+            ". . . . . paragraph paragraph paragraph paragraph . . ."
+            ". . . . . button button . . . . ."
         ;
 
-        &__logo{
-            font-size:22em;
+        &__logo {
+            font-size: 22em;
         }
 
-        &__button{
+        &__button {
             align-self: end;
             justify-self: center;
             background-color: transparent;
@@ -506,7 +634,8 @@ MEDIA QUERIES - 1100px
             position: relative;
             transition: all 0.15s;
         }
-        &__button:hover{
+
+        &__button:hover {
             background-color: $secondaryLightCollor;
             border: 2px solid $secondaryLightCollor;
             color: $mainDarkCollor;
@@ -514,34 +643,36 @@ MEDIA QUERIES - 1100px
         }
     }
 
-        
+
     /********************************************************
     NAVBAR SECTION
     ********************************************************/
     .navbar {
-    display: none;
+        display: none;
     }
 
 
     /********************************************************
     ABOUT ME SETION
     ********************************************************/
-    .about-me{
+    .about-me {
         height: 22vw;
-        &__profile-picture{
+
+        &__profile-picture {
             height: 22vw;
         }
-        &__text-section{
+
+        &__text-section {
             font-size: 15px;
             padding-right: 16%;
         }
     }
-    
+
 
     /********************************************************
     PORTFOLIO SECTION
     ********************************************************/
-    .portfolio{
+    .portfolio {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
         grid-template-rows: auto;
@@ -552,23 +683,29 @@ MEDIA QUERIES - 1100px
         margin-left: auto;
     }
 
-    .item-description{
+    .item-description {
         display: grid;
         grid-template-rows: 2;
         background-color: $secondaryLightCollorOPA50;
         margin-left: 12.5%;
         width: 75%;
-   
-        &__header{
+
+        &__header {
             text-align: center;
         }
-        &__paragraph{
+
+        &__paragraph {
             padding: 1.5vw;
         }
-        &--hide{
+
+        &--hide {
             display: none;
         }
     }
+
+
+
+
 
 
     /********************************************************
@@ -627,32 +764,61 @@ MEDIA QUERIES - 1100px
 MEDIA QUERIES - 800px
 ********************************************************/
 @media only screen and (max-width: 800px) {
-    .portfolio{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(265px,400px));
-        grid-template-rows: auto;
-        grid-template-rows: auto;
-        height: 20rem;
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
+
+
+    /********************************************************
+    Skills SETION
+    ********************************************************/
+    .skills {
+        padding: 0vw 7vw;
+        margin-bottom: 10vw;
     }
 
-    .item-description{
-        display: grid;
-        grid-template-rows: 2;
-        background-color: $secondaryLightCollorOPA50;
-        margin-left: 12.5%;
-        width: 75%;
-   
-        &__header{
-            text-align: center;
+
+    /********************************************************
+    ABOUT ME SETION
+    ********************************************************/
+    .about-me {
+        height: 40vw;
+        &__text-section{
+            font-size: 18px;
         }
-        &__paragraph{
-            padding: 1.5vw;
+        &__profile-picture{
+            height: 23vw;
+            top: 6vh;
+            right: -5vw;
         }
-        &--hide{
-            display: none;
+    }
+
+    /********************************************************
+    PORTFOLIO SETION
+    ********************************************************/
+    .portfolio {
+        display: none;
+
+        &__inner-content__header {
+            margin-top: 0;
+            padding-top: 35%;
+            font-size: 2.5em;
+            margin-bottom: 8%;
         }
+    }
+
+    .item-description {
+        display: none;
+    }
+
+    .carousel {
+        display: block;
+        height: 80vw;
+        width: 80vw;
+        margin-bottom: 20vw;
+    }
+
+    /********************************************************
+    CONTACT SETION
+    ********************************************************/
+    .contact{
+        height: 29vh;
     }
 }
