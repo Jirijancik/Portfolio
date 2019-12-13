@@ -152,6 +152,10 @@ NAVBAR SECTION
   text-decoration: none;
 }
 
+.navbar__nav__item:hover {
+  font-weight: 600;
+}
+
 .navbar__header {
   text-align: center;
 }

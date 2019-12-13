@@ -151,6 +151,10 @@ NAVBAR SECTION
         text-decoration: none;
     }
 
+    &__nav__item:hover {
+        font-weight: 600;
+    }
+
     &__header {
         text-align: center;
     }
@@ -415,18 +419,20 @@ PORTFOLIO CAROUSEL SECTION
     height: 60vh;
     width: 80%;
     margin: 5vh auto;
-    &__button{
+
+    &__button {
         height: 94%;
-        background: rgba(0,0,0,0.01);
+        background: rgba(0, 0, 0, 0.01);
         border: none;
         width: 20%;
         font-size: 2.5rem;
         color: rgb(56, 92, 133);
         cursor: pointer;
     }
-    &__button:focus{
-        outline:none;
-        background: rgba(0,0,0,0.04);
+
+    &__button:focus {
+        outline: none;
+        background: rgba(0, 0, 0, 0.04);
     }
 }
 
@@ -779,10 +785,12 @@ MEDIA QUERIES - 800px
     ********************************************************/
     .about-me {
         height: 40vw;
-        &__text-section{
+
+        &__text-section {
             font-size: 18px;
         }
-        &__profile-picture{
+
+        &__profile-picture {
             height: 23vw;
             top: 6vh;
             right: -5vw;
@@ -813,7 +821,8 @@ MEDIA QUERIES - 800px
         width: 80vw;
         margin-bottom: 20vw;
     }
-    .link--carousel{
+
+    .link--carousel {
         color: $mainLightCollor;
         -webkit-text-decoration: underline $mainLightCollor;
         text-decoration: underline $mainLightCollor;
@@ -824,7 +833,7 @@ MEDIA QUERIES - 800px
     /********************************************************
     CONTACT SETION
     ********************************************************/
-    .contact{
+    .contact {
         height: 29vh;
     }
 }
@@ -843,46 +852,50 @@ MEDIA QUERIES - 420px
             ". . . . . . paragraph paragraph paragraph paragraph paragraph ."
             ". . . . . button button . . . . ."
         ;
+
         &__logo {
             font-size: 16em;
         }
     }
-    
 
-    .skills{
+
+    .skills {
         padding: 0vw 2vw;
         margin-bottom: 20vw;
 
-        &__main-header{
+        &__main-header {
             margin-bottom: 1%;
         }
     }
-    .chartjs-render-monitor{
-        height: 200px!important;
-    width: 398px!important;
-    margin-left: -13%;
+
+    .chartjs-render-monitor {
+        height: 200px !important;
+        width: 398px !important;
+        margin-left: -13%;
     }
 
 
 
-    .about-me{
+    .about-me {
         grid-template-columns: 1fr;
         height: 90vw;
-        &__profile-picture{
+
+        &__profile-picture {
             display: none;
         }
+
         &__text-section {
             font-size: 1rem;
         }
     }
 
 
-    .carousel{
+    .carousel {
         width: 100vw;
         height: 100vw;
     }
 
-    .portfolio__inner-content__header{
+    .portfolio__inner-content__header {
         font-size: 1.5em;
     }
 
@@ -895,37 +908,39 @@ MEDIA QUERIES - 420px
     /********************************************************
     CONTACT SECTION
     ********************************************************/
-.contact {
-    height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 2vh;
+    .contact {
+        height: 40vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 2vh;
 
-    &__header-section {
-        grid-column: 1/-1;
-        font-size: 1.1rem;
-        padding-top: 1.2vw;
-        padding-left: 1rem;
-        height: 17vh;
-    }
-    &__section {
-        margin-left: 0vw;
-    }
+        &__header-section {
+            grid-column: 1/-1;
+            font-size: 1.1rem;
+            padding-top: 1.2vw;
+            padding-left: 1rem;
+            height: 17vh;
+        }
+
+        &__section {
+            margin-left: 0vw;
+        }
 
 
-    &__section__child-header {
-        display: none;
+        &__section__child-header {
+            display: none;
+        }
+
+        &__icons {
+            width: 3rem;
+            background-color: $mainLightCollor;
+        }
     }
 
-    &__icons {
-        width: 3rem;
-        background-color: $mainLightCollor;
+    .contact__section--email {
+        transform: translateX(5%);
+        grid-column: 1 /-1;
     }
-}
-.contact__section--email{
-    transform: translateX(5%);
-    grid-column: 1 /-1;
-}
 }
 
 
@@ -944,14 +959,17 @@ MEDIA QUERIES - 333px
             ". . . . . . paragraph paragraph paragraph paragraph paragraph ."
             ". . . . . button button . . . . ."
         ;
+
         &__logo {
             font-size: 14em;
         }
     }
-    .about-me{
+
+    .about-me {
         height: 120vw;
         font-size: 0.9rem;
     }
+
     .contact {
         height: 50vh;
     }
