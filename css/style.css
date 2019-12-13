@@ -139,7 +139,6 @@ NAVBAR SECTION
   width: 10%;
   position: fixed;
   z-index: 9999;
-  border-left: 2px dotted #0C0F20;
   right: 0;
   top: 0;
   background-color: white;
@@ -442,17 +441,17 @@ PORTFOLIO CAROUSEL SECTION
 
 .carousel__button {
   height: 94%;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.01);
   border: none;
   width: 20%;
   font-size: 2.5rem;
-  color: #0C0F20;
+  color: #385c85;
   cursor: pointer;
 }
 
 .carousel__button:focus {
   outline: none;
-  color: #385c85;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .carousel__image {
@@ -804,11 +803,115 @@ MEDIA QUERIES - 800px
     width: 80vw;
     margin-bottom: 20vw;
   }
+  .link--carousel {
+    color: white;
+    -webkit-text-decoration: underline white;
+    text-decoration: underline white;
+    font-size: 1rem;
+    font-weight: 400;
+  }
   /********************************************************
     CONTACT SETION
     ********************************************************/
   .contact {
     height: 29vh;
+  }
+}
+
+/********************************************************
+MEDIA QUERIES - 420px
+********************************************************/
+@media only screen and (max-width: 420px) {
+  .hero-section {
+        grid-template-areas: "logo logo logo logo . . . . . . . ." ". . . header header header header header header header header header" ". . . . . . paragraph paragraph paragraph paragraph paragraph ." ". . . . . button button . . . . .";
+  }
+  .hero-section__logo {
+    font-size: 16em;
+  }
+  .skills {
+    padding: 0vw 2vw;
+    margin-bottom: 20vw;
+  }
+  .skills__main-header {
+    margin-bottom: 1%;
+  }
+  .chartjs-render-monitor {
+    height: 200px !important;
+    width: 398px !important;
+    margin-left: -13%;
+  }
+  .about-me {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: 90vw;
+  }
+  .about-me__profile-picture {
+    display: none;
+  }
+  .about-me__text-section {
+    font-size: 1rem;
+  }
+  .carousel {
+    width: 100vw;
+    height: 100vw;
+  }
+  .portfolio__inner-content__header {
+    font-size: 1.5em;
+  }
+  .contact {
+    height: 34vh;
+  }
+  /********************************************************
+    CONTACT SECTION
+    ********************************************************/
+  .contact {
+    height: 40vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 2vh;
+  }
+  .contact__header-section {
+    grid-column: 1/-1;
+    font-size: 1.1rem;
+    padding-top: 1.2vw;
+    padding-left: 1rem;
+    height: 17vh;
+  }
+  .contact__section {
+    margin-left: 0vw;
+  }
+  .contact__section__child-header {
+    display: none;
+  }
+  .contact__icons {
+    width: 3rem;
+    background-color: white;
+  }
+  .contact__section--email {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
+    grid-column: 1 /-1;
+  }
+}
+
+/********************************************************
+MEDIA QUERIES - 333px
+********************************************************/
+@media only screen and (max-width: 333px) {
+  .hero-section {
+        grid-template-areas: "logo logo logo logo . . . . . . . ." ". header header header header header header header header header header ." ". . . . . . paragraph paragraph paragraph paragraph paragraph ." ". . . . . button button . . . . .";
+  }
+  .hero-section__logo {
+    font-size: 14em;
+  }
+  .about-me {
+    height: 120vw;
+    font-size: 0.9rem;
+  }
+  .contact {
+    height: 50vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
