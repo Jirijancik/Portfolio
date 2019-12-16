@@ -9,7 +9,6 @@ const elementHeroSection = document.querySelector(".hero-section");
 const elementNavbar = document.querySelector(".navbar");
 const elementFooter = document.querySelector(".footer");
 
-console.log(elementHeroButton.getBoundingClientRect());
 
 let myChartSkills = <HTMLCanvasElement>document.getElementById('myChartSkills');
 let myChartLove = <HTMLCanvasElement>document.getElementById('myChartLove');
@@ -234,7 +233,6 @@ class Portfolio {
   // Funkce pro pžidání event listeneru jednotlivým popiskům, Rozlišení Pro TOUCH
   private addEventListenerToDescrItem(item: Element, description: Element) {
     let isTouch= isTouchDevice();
-    console.log(isTouch);
     if (!isTouch) {
       return item.addEventListener('mouseenter', () => this.onHover(description));
     } else
@@ -318,12 +316,9 @@ let portfolio = new Portfolio(isTouchDevice());
 function isTouchDevice() {
 
   if (('ontouchstart' in window)) {
-    console.log("istouch");
     return true;
   }
   else
-    console.log("isNOTtouch");
   return false;
-
 }
 
