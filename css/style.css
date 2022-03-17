@@ -57,7 +57,8 @@ HERO SECTION
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "logo logo logo logo . . . header header header header ." ". . . . . . . paragraph paragraph button button .";
+      grid-template-areas: "logo logo logo logo . . . header header header header ."
+ ". . . . . . . paragraph paragraph button button .";
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -344,13 +345,13 @@ PORTFOLIO SECTION
 }
 
 .portfolio__first-section {
-  background-image: url("../images/todolist.jpg");
+  background-image: url("../images/weatherapp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .portfolio__second-section {
-  background-image: url("../images/weatherapp.jpg");
+  background-image: url("../images/todolist.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
@@ -632,7 +633,9 @@ MEDIA QUERIES - 1100px
   .hero-section {
     -ms-grid-rows: 8fr 1fr 2fr 1fr;
         grid-template-rows: 8fr 1fr 2fr 1fr;
-        grid-template-areas: "logo logo logo logo . header header header header header . ." ". . . . . paragraph paragraph paragraph paragraph . . ." ". . . . . button button . . . . .";
+        grid-template-areas: "logo logo logo logo . header header header header header . ."
+ ". . . . . paragraph paragraph paragraph paragraph . . ."
+ ". . . . . button button . . . . .";
   }
   .hero-section__logo {
     font-size: 22em;
@@ -827,7 +830,10 @@ MEDIA QUERIES - 420px
 ********************************************************/
 @media only screen and (max-width: 420px) {
   .hero-section {
-        grid-template-areas: "logo logo logo logo . . . . . . . ." ". . . header header header header header header header header header" ". . . . . . paragraph paragraph paragraph paragraph paragraph ." ". . . . . button button . . . . .";
+        grid-template-areas: "logo logo logo logo . . . . . . . ."
+ ". . . header header header header header header header header header"
+ ". . . . . . paragraph paragraph paragraph paragraph paragraph ."
+ ". . . . . button button . . . . .";
   }
   .hero-section__logo {
     font-size: 16em;
@@ -905,7 +911,10 @@ MEDIA QUERIES - 333px
 ********************************************************/
 @media only screen and (max-width: 333px) {
   .hero-section {
-        grid-template-areas: "logo logo logo logo . . . . . . . ." ". header header header header header header header header header header ." ". . . . . . paragraph paragraph paragraph paragraph paragraph ." ". . . . . button button . . . . .";
+        grid-template-areas: "logo logo logo logo . . . . . . . ."
+ ". header header header header header header header header header header ."
+ ". . . . . . paragraph paragraph paragraph paragraph paragraph ."
+ ". . . . . button button . . . . .";
   }
   .hero-section__logo {
     font-size: 14em;

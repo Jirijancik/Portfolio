@@ -320,13 +320,13 @@ PORTFOLIO SECTION
     }
 
     &__first-section {
-        background-image: url($imageTodoList);
+        background-image: url($imageWeatherApp);
         background-repeat: no-repeat;
         background-size: cover;
     }
-
+    
     &__second-section {
-        background-image: url($imageWeatherApp);
+        background-image: url($imageTodoList);
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
